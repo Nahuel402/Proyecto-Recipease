@@ -1,0 +1,53 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecipeEase Chatbot</title>
+</head>
+<body>
+  <h1>RecipeEase Chatbot</h1>
+  <div id="chat">
+    <div id="messages"></div>
+    <input type="text" id="userInput" placeholder="Escribe un mensaje...">
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const userInput = document.getElementById('userInput').value.trim();
+      if (!userInput) return;
+
+      try {
+        const response = await fetch('/message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ message: userInput })
+        });
+
+        const data = await response.json();
+        const message = data.text || 'No se encontró respuesta';
+
+        appendMessage(userInput, 'user');
+        appendMessage(message, 'bot');
+
+        document.getElementById('userInput').value = '';
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+
+    function appendMessage(message, sender) {
+      const messagesDiv = document.getElementById('messages');
+      const messageElement = document.createElement('div');
+      messageElement.classList.add(sender);
+      messageElement.innerText = message;
+      messagesDiv.appendChild(messageElement);
+    }
+  </script>
+</body>
+</html>

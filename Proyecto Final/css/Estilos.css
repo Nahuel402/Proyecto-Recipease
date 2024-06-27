@@ -1,0 +1,150 @@
+*{
+   font-family: 'Times New Roman', Times, serif; 
+   padding: 0;
+   margin: 0;
+}
+.body{
+    background-image: url(Fondo.jpg);
+    padding-left: 4px;
+}
+.header{
+    top: 0;
+    position: fixed;
+    background-color: #A99886;
+    width: 100%;
+    padding: 6px;
+    text-align: center;
+    height: 60px;
+    justify-content: space-around;
+    color: black;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #A99886;
+    height: 50px;
+    width: 100%;
+    color: black;
+    text-align: center;
+}
+.bod{
+    display: grid;
+    place-content: center;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+.button{
+    border-radius: 50px;
+    background-color: #B8C8AE;
+    padding: 5px;
+    border-color: black;
+    border: solid;
+}
+.Logo{
+    height: 50px;
+    width: 70px;
+    border-radius: 50px;
+}
+.tex{
+    font-style: none;
+}
+.butR{
+    width: 500px;
+    height: 60px;
+    text-align: center;
+}
+.BotonRegistro{
+    text-align: center;
+}
+.Buscador{
+    height: 50px;
+    width: 700px;
+}
+.Registrar{
+    height: 70px;
+    width: 150px;
+    border-radius: 50px;
+    background-color: #B8C8AE;
+    padding: 5px;
+    border-color: black;
+    border: solid;
+}
+.registro{
+    background-color: #A99886;
+    padding: 10px;
+    display: grid;
+    place-content: center;
+    min-width: 1000px;
+    min-height: 800px;
+}
+.Foot{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.bodP{
+    background-color: whitesmoke;
+}
+.limit{
+    bottom: 0;
+}
+.RowP{
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
+.window-notice {
+    background: rgba(33, 41, 52, .85);
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    transition: background .6s;
+}
+
+.window-notice .content {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px;
+    min-width: 320px !important;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+
+.content-buttons {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.content-buttons a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem;
+    background-color: #0080DE;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.content-buttons a:hover {
+    background-color: #006AB8;
+}
+
+.content-text a {
+    color: #0080DE;
+    text-decoration: none;
+}
+
+.content-text a:hover {
+    color: #006AB8;
+    text-decoration: underline;
+    text-align: justify;
+}
