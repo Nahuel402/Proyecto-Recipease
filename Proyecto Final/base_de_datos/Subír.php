@@ -34,7 +34,7 @@ if(isset($ID)){
 if ($conn->query($sql) === TRUE){
     $_SESSION["Registrado"]= 1 ;
     $_SESSION["Volver"] = 0;
-    header("Location:Index.php");
+    header("Location:../pages/Index.php");
     exit;
 } else{
     echo "Error al insetar registro: " . $conn->error;

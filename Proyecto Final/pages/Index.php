@@ -44,7 +44,7 @@
     <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
-<body class="body">
+<body>
 <script>
     Console.log('.<?$_SESSION["IdUsuario"]?>.');
 </script><?php 

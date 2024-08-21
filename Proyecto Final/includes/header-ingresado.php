@@ -12,7 +12,7 @@
                         <div class='col-md-3'>
                             <div class='row'>
                                 <div class='col-md-6'>
-                                    <a href='CerrarSession.php'><button class='buttonTop'>Cerrar Session</button></a>
+                                    <a href='../base_de_datos/CerrarSession.php'><button class='buttonTop'>Cerrar Session</button></a>
                                 </div>
                                 <div class='col-md-6 pt-1'>
                                     <h5><img src="<?$Imagen?>"><?$Nombre?></h5> 

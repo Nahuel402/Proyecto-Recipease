@@ -3,8 +3,8 @@
    padding: 0;
    margin: 0;
 }
-.body{
-    background-image: url("../assets/images/Fondo.jpg");
+body{
+    background-image: url("../images/FondoIndex.jpg");
     padding-left: 4px;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@
 }
 .header-title{
     padding-left: 15%;
-    padding-top: 5%;
+    padding-top: 1%;
     color: white;
 }
 .Logo{
@@ -62,8 +62,9 @@
     border-color: black;
 
 }
-.chat{
+.Chat-body{
     background-color: #F0D1CA;
+    min-height: 100vh;
 }
 .center{
     text-align: center;
@@ -130,12 +131,13 @@
     color: black;
 }
 .BodyChat{
-    background-image: url("fondochat.PNG");
+    background-image: url("../images/fondochat.PNG");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
-    padding: 40px;
+}
+.Chat{
 }
 .window-notice {
     background: rgba(33, 41, 52, .85);
