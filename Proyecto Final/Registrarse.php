@@ -1,7 +1,6 @@
 <?php 
     session_start();
-
-    $_SESSION["Volver"]= 1;
+    $ID = -1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,48 +8,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Estilos.css">
+    <link rel="stylesheet" href="css/Estilo.css">
     <script defer src="js/Cod.js"></script>
+    <script src="js/Imagen.js"></script>
     <title>RecipeEase</title>
 </head>
 <body class="body">
-<div class="container header">
-            <div class="row header">
-                <div class="col-md-2">
-                    <h5><img class="Logo" src="Logo.png" alt="">RecipeEase</h5>
+<?php 
+            if(isset($_SESSION["Registrado"])){   
+                include "includes/header-ingresado.php";
+            }else{
+                include "includes/header-registro-login.php";
+            }
+        ?>
+        <div class="row espacioTop">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                <div class="container bodReg p-5">
+                    <div class="container registro">
+                        <form action="Subír.php" method="POST">
+                            <input type="hidden" name="ID" value="<?$ID?>">
+                            <h3 class="ingreso">Ingresar Nombre</h3>  <input type="text" name="name" class="butR" placeholder="Nombre" required><br>
+                            <br><br>
+                            <h3 class="ingreso">Ingresar Email</h3> <input type="text" name="email" class="butR" placeholder="Correo Electronico" required><br>
+                            <br><br>
+                            <h3 class="ingreso">Ingresar Contraseña</h3>  <input type="password" name="Contra" class="butR" placeholder="Contraseña" required><br>
+                            <br><br>
+                            <h3 class="ingreso">Confirmar Contraseña</h3>   <input type="password" name="ContraV" class="butR" placeholder="Verificación Contraseña" required><br>
+                            <br><br>
+                            <h3 class="ingreso">Ingresar Imagen</h3> <input type="file" accept="image/*" onchange="previewImage(event, '#imgPreview')" name="img" class="ImgInput"> <input type="text" name="ContraV" class="butR" id="textimg" value="" placeholder="Imagen Seleccionada" ><br> <img id="imgPreview" class="ImgInput-Imagen" src="nada.png"><br>
+                            <br><br>
+                            <div class="col-md-12"><a href="acceder.php">Ya tienes una cuenta? Inicia sessión</a></div>
+                            <div class="row BotonRegistro pt-4">
+                            <div class="col-md-12"><input type="submit" class="BottunsRegistrar" name="Registrar" value="Registrar"></div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-md-6"></div>
-                <div class="col-md-4">
-                    <a href="">Novedades</a>
                 </div>
             </div>
         </div>
-    <div class="container bod">
-        <div class="container registro">
-            <form action="Subír.php" method="POST">
-                <h3>Ingresar Nombre  <input type="text" name="Nombre" class="butR" placeholder="Nombre" required><br></h3>
-                <br><br><br>
-                <h3>Ingresar Email  <input type="text" name="Email" class="butR" placeholder="Correo Electronico" required><br></h3>
-                <br><br><br>
-                <h3>Ingresar Contraseña  <input type="password" name="Pass" class="butR" placeholder="Contraseña" required><br></h3>
-                <br><br><br>
-                <h3>Confirmar Contraseña   <input type="password" name="PassV" class="butR" placeholder="Verificación Contraseña" required><br></h3>
-                <br><br><br>
-                <div class="row BotonRegistro">
-                <div class="col-md-6"><input type="submit" class="Registrar" value="Registrarse"></div><div class="col md 6"><button class="Registrar" onclick="Volver()">Volver</button></div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="row Foot pt-2">
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-        </div>
-    </div>
 </body>
 </html>

@@ -9,44 +9,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Estilos.css">
+    <link rel="stylesheet" href="css/Estilo.css">
     <script defer src="js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
 <body class="body">
-<div class="container header">
-            <div class="row header">
-                <div class="col-md-2">
-                    <h5><img class="Logo" src="Logo.png" alt="">RecipeEase</h5>
+        <?php 
+            if(isset($_SESSION["Registrado"])){   
+                include "includes/header-ingresado.php";
+            }else{
+                include "includes/header-registro-login.php";
+            }
+        ?>
+        <div class="row espacioTop">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                <div class="container bodReg p-5">
+                    <div class="container registroAcceso">
+                        <form action="Chequeo.php" method="POST">
+                            <input type="hidden" name="id">
+                            <h3 class="ingreso">Ingresar Email</h3>  <input type="text" name="email" class="butR" placeholder="Email" required><br>
+                            <br><br>
+                            <h3 class="ingreso">Ingresar Contraseña</h3>  <input type="password" name="Contra" class="butR" placeholder="Contraseña" required><br>
+                            <br><br>
+                            <div class="col-md-12"><a href="Registrarse.php">Aun no tienes una cuenta? Registrate</a></div>
+                            <div class="row BotonRegistro pt-4">
+                            <div class="col-md-12"><input type="submit" class="BottunsRegistrar" value="Acceder"></div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-md-6"></div>
-                <div class="col-md-4">
-                    <a href="">Novedades</a>
                 </div>
             </div>
         </div>
-    <div class="container bod">
-        <div class="container registro">
-            <form action="Chequeo.php" method="POST">
-                <h3>Ingresar Nombre  <input type="text" name="Nombre" class="butR" placeholder="Nombre" required><br></h3>
-                <br><br><br>
-                <h3>Ingresar Contraseña  <input type="password" name="Pass" class="butR" placeholder="Contraseña" required><br></h3>
-                <br><br><br>
-                <div class="row BotonRegistro">
-                <div class="col-md-6"><input type="submit" class="Registrar" value="Acceder"></div><div class="col md 6"><button class="Registrar" onclick="Volver()">Volver</button></div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="row Foot pt-2">
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-            <div class="col-md-2"><a href="">asd</a></div>
-        </div>
-    </div>
 </body>
 </html>
