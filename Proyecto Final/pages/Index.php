@@ -39,9 +39,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Estilo.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/Cod.js"></script>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/Estilo.css">
+    <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
 <body class="body">
@@ -49,9 +49,9 @@
     Console.log('.<?$_SESSION["IdUsuario"]?>.');
 </script><?php 
             if(isset($_SESSION["Registrado"])){   
-                include "includes/header-ingresado.php";
+                include "../includes/header-ingresado.php";
             }else{
-                include "includes/header.php";
+                include "../includes/header.php";
             }
         ?>
         <div class="row espacioTop">
