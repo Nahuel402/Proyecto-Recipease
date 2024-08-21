@@ -20,7 +20,7 @@
             }
             ?>
         <div class="Chat">
-            <div class="row Chat-body >
+            <div class="row Chat-body ">
                 <div class="col-md-12 ">
                     <div class="row NomRecet ">
                         <div class="col-md-4 NomRecet ">
