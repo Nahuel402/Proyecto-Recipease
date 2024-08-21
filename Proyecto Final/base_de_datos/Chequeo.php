@@ -21,7 +21,7 @@ if(isset($ID)){
     }
 }else{
     $_SESSION["Error"] = 1;
-    header("Location:Index.php");
+    header("Location:../pages/Index.php");
 }
 
 $conn->close();

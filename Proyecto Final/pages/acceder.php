@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                 <div class="container bodReg p-5">
                     <div class="container registroAcceso">
-                        <form action="Chequeo.php" method="POST">
+                        <form action="../base_de_datos/Chequeo.php" method="POST">
                             <input type="hidden" name="id">
                             <h3 class="ingreso">Ingresar Email</h3>  <input type="text" name="email" class="butR" placeholder="Email" required><br>
                             <br><br>
