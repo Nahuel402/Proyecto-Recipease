@@ -35,7 +35,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Estilo.css">
+    <link rel="stylesheet" href="../assets/css/Estil.css">
     <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
@@ -49,30 +49,11 @@
                 include "../includes/header.php";
             }
         ?>
-        <div class="row espacioTop">
-            <div class="col-md-1"></div>
-            <div class="col-md-7 Cont-bod">
-                <div class="col-md-12 bod">
-                <div class="container p-4">
-                    <div class="col-md-12 pt-4">
-                        <div class="col-md-8"><h1 class="titlebod">RecipeEase</h1></div>
-                    </div>
-                    <div class="col-md-12 pt-5">
-                        <p class="texto">Bienvienido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar <?$_SESSION["IdUsuario"]?></p>
-                    </div>
-                    <div class="col-md-12 pt-4"></div>
-                    <div class="col-md-12 pt-5">
-                        <p class="texto">!Click en el botón de abajo para empezár¡</p>
-                    </div>
-                    <div class="row pt-5">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4"><a href="ChatBot.php"><button class=" buttonBot">Chatbot</button></a></div>
-                        <div class="col-md-4"></div>
-                    </div>
-                </div>
-                </div>
+        <div class="col-lg-12 d-flex justify-content-center align-items-center vh-100 text-center">
+            <div class="container BodyIndex">
+                <h1 class="BodyIndex-title">RecipeEase</h1>
+
             </div>
-            <div class="col-md-4"></div>
         </div>
 </body>
 </html>
