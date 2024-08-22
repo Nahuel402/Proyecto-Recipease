@@ -51,8 +51,13 @@
         ?>
         <div class="col-lg-12 d-flex justify-content-center align-items-center vh-100 text-center">
             <div class="container BodyIndex">
-                <h1 class="BodyIndex-title">RecipeEase</h1>
-
+                <div class="col-lg-12">
+                    <h1 class="BodyIndex-title">RecipeEase</h1>
+                </div>
+                <div class="col-lg-12 BodyIndex-div">
+                    <p class="BodyIndex-div-description">Bienvienido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar </p>
+                    <p class="BodyIndex-div-description2">!Click en el botón de abajo para empezár¡</p>
+                </div>
             </div>
         </div>
 </body>
