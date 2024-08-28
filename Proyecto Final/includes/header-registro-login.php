@@ -1,10 +1,10 @@
-<div class="container header">
+        <div class="container header">
             <div class="row header">
                 <div class="col-md-2">
                     <div class="col-12">
                         <div class="row">
                             <div class="col-2"><img class="Logo" src="../assets/images/Logo.png" alt=""></div>
-                            <div class="col-10 header-title vh-100"><h3>RecipeEase</h3></div>
+                            <div class="col-10 header-title"><h3>RecipeEase</h3></div>
                         </div> 
                     </div>   
                 </div>

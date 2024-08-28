@@ -26,6 +26,7 @@
     }
     if($_SESSION["Volver"] != 0){
         include "../includes/windowsalert.php";
+        $_SESSION["Volver"] = 0 ;
     }
     
 ?>
@@ -40,15 +41,6 @@
     <title>RecipeEase</title>
 </head>
 <body>
-<script>
-    Console.log('.<?$_SESSION["IdUsuario"]?>.');
-</script><?php 
-            if(isset($_SESSION["Registrado"])){   
-                include "../includes/header-ingresado.php";
-            }else{
-                include "../includes/header.php";
-            }
-        ?>
         <div class="col-lg-12 d-flex justify-content-center align-items-center vh-100 text-center">
             <div class="container BodyIndex">
                 <div class="col-lg-12">
