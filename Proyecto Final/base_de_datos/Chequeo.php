@@ -19,10 +19,10 @@ if(isset($ID)){
         $_SESSION["Registrado"] = 1;
         header("Location:Index.php");
     }
-}else{
-    $_SESSION["Error"] = 1;
-    header("Location:../pages/Index.php");
 }
+    $_SESSION["Error"] = 1;
+    header("Location:../pages/acceder.php");
+
 
 $conn->close();
 ?>

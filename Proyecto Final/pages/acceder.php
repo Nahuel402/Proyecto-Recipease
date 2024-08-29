@@ -1,7 +1,5 @@
 <?php 
     session_start();
-
-    $_SESSION["Volver"]= 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Estilo.css">
+    <link rel="stylesheet" href="../assets/css/Estil.css">
     <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
@@ -19,28 +17,18 @@
                 include "../includes/header-ingresado.php";
             }else{
                 include "../includes/header-registro-login.php";
-                echo"<br><br><br>
-                    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                            <span aria-hidden='true'>&times;</span>
-                        </button>
-                    </div>";
             }
         ?>
-        <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center align-items-center vh-100 text-center">
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                <div class="container bodReg p-5">
-                    <div class="container registroAcceso">
+                <div class="container bodReg">
+                    <div class="container ">
                         <form action="../base_de_datos/Chequeo.php" method="POST">
                             <input type="hidden" name="id">
-                            <h3 class="ingreso">Ingresar Email</h3>  <input type="text" name="email" class="butR" placeholder="Email" required><br>
-                            <br><br>
-                            <h3 class="ingreso">Ingresar Contraseña</h3>  <input type="password" name="Contra" class="butR" placeholder="Contraseña" required><br>
-                            <br><br>
-                            <div class="col-md-12"><a href="Registrarse.php">Aun no tienes una cuenta? Registrate</a></div>
+                            <h3 class="ingreso">Ingresar Email</h3>  <input type="text" name="email" class="butR" placeholder="Email" required>
+                            <h3 class="ingreso">Ingresar Contraseña</h3>  <input type="password" name="Contra" class="butR" placeholder="Contraseña" required>
                             <div class="row BotonRegistro pt-4">
                             <div class="col-md-12"><input type="submit" class="BottunsRegistrar" value="Acceder"></div>
                             </div>

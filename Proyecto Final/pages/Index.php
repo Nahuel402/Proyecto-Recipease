@@ -17,17 +17,6 @@
             $Imagen = $row["Imagen"];
         }
     }
-    if(isset($_SESSION["Registrado"])){
-        if($_SESSION["Registrado"] != 0 ){
-            $_SESSION["Volver"]=0;
-        }
-    }else{
-        $_SESSION["Volver"] = 1;
-    }
-    if($_SESSION["Volver"] != 0){
-        include "../includes/windowsalert.php";
-        $_SESSION["Volver"] = 0 ;
-    }
     
 ?>
 <!DOCTYPE html>
@@ -36,7 +25,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Estil.css">
+    <link rel="stylesheet" href="../assets/css/Estilo.css">
     <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
@@ -46,9 +35,22 @@
                 <div class="col-lg-12">
                     <h1 class="BodyIndex-title">RecipeEase</h1>
                 </div>
-                <div class="col-lg-12 BodyIndex-div">
-                    <p class="BodyIndex-div-description">Bienvienido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar </p>
-                    <p class="BodyIndex-div-description2">!Click en el botón de abajo para empezár¡</p>
+                <div class="col-lg-12 BodyIndex-div text-center align-items-center">
+                    <div class="container">
+                        <p class="BodyIndex-div-description">Bienvienido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar </p>
+                        <p class="BodyIndex-div-description2">!Click en el botón de abajo para empezár¡</p>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-6 text-center">
+                            <a href="acceder.php"><button class="BodyIndex-buttom" onclick="Login()">Ingresar</button></a>
+                            </div>
+                            <div class="col-lg-6 text-center">
+                                <a href="Registrarse.php"><button class="BodyIndex-buttom" onclick="Registrar()">Registro</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                 </div>
             </div>
         </div>
