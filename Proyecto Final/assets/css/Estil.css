@@ -15,7 +15,7 @@
 .header{
     top: 0;
     position: fixed;
-    background-color: #0000008e;
+    background-color: #0000002d;
     width: 100%;
     padding-top: 6px;
     text-align: center;
@@ -25,6 +25,14 @@
 }
 .header-title{
     color: white;
+}
+.alert-BotRegistro{
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+.alert-BotRegistro:hover{
+    color: #3e3e3e;
 }
 .Logo{
     height: 55px;
@@ -55,7 +63,6 @@
 }
 .bodReg{
     background-color: #a7abac9c;
-    width: 700px;
     padding: 20px;
     border-radius: 50px;
     border:solid;
@@ -118,33 +125,28 @@
 .BodyIndex{
     background-color: #a7abacc7;
     border-radius: 50px;
+    min-height: 75vh;
     max-width: 70vw;
     border: 2px solid rgb(36, 36, 36);
 }
 .BodyIndex-title{
     font-size: 170px;
-    width: 100%;
+    padding: 1em 0;
     height: 30%;
     color: black;
 }
 .BodyIndex-div{
-    width: 100%;
     text-align: center;
 }
+
 .BodyIndex-div-description{
     width: 70%;
     padding: 1em 0;
     font-size: 40px;
-    text-align: center;
 }
+
 .BodyIndex-div-description2{
     font-size: 20px;
-}
-.BodyIndex-buttom{
-    font-size: 25px;
-    width: 350px;
-    height: 60px;
-    border-radius: 50px;
 }
 /*ChatBot*/
 .BodyChat{
