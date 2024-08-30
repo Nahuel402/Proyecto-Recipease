@@ -8,42 +8,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Estilo.css">
+    <link rel="stylesheet" href="../assets/css/Estil.css">
     <script defer src="../assets/js/Cod.js"></script>
     <script defer src="../assets/js/Imagen.js"></script>
     <title>RecipeEase</title>
 </head>
 <body class="body">
-<?php 
-            if(isset($_SESSION["Registrado"])){   
-                include "../includes/header-ingresado.php";
-            }else{
-                include "../includes/header-registro-login.php";
-            }
-        ?>
-        <div class="row espacioTop">
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                <div class="container bodReg p-5">
-                    <div class="container registro">
-                        <form action="../base_de_datos/Subír.php" method="POST">
-                            <input type="hidden" name="ID" value="<?$ID?>">
-                            <h3 class="ingreso">Ingresar Nombre</h3>  <input type="text" name="name" class="butR" placeholder="Nombre" required><br>
-                            <br><br>
-                            <h3 class="ingreso">Ingresar Email</h3> <input type="text" name="email" class="butR" placeholder="Correo Electronico" required><br>
-                            <br><br>
-                            <h3 class="ingreso">Ingresar Contraseña</h3>  <input type="password" name="Contra" class="butR" placeholder="Contraseña" required><br>
-                            <br><br>
-                            <h3 class="ingreso">Confirmar Contraseña</h3>   <input type="password" name="ContraV" class="butR" placeholder="Verificación Contraseña" required><br>
-                            <div class="row BotonRegistro pt-4">
-                            <div class="col-md-12"><input type="submit" class="BottunsRegistrar" name="Registrar" value="Registrar"></div>
+    <?php 
+        if(isset($_SESSION["Registrado"])){   
+            include "../includes/header-ingresado.php";
+        } else {
+            include "../includes/header-registro-login.php";
+        }
+    ?>
+
+    <div class="container vh-100 d-flex justify-content-center align-items-center">
+        <div class="row w-100">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <div class="bodReg p-4">
+                    <div class="registro text-center">
+                        <form action="../base_de_datos/Subir.php" method="POST">
+                            <input type="hidden" name="ID" value="<?php echo $ID; ?>">
+                            
+                            <h3 class="ingreso mb-4">Ingresar Nombre</h3>
+                            <input type="text" name="name" class="butR mb-3" placeholder="Nombre" required>
+                            
+                            <h3 class="ingreso mb-4">Ingresar Email</h3>
+                            <input type="text" name="email" class="butR mb-3" placeholder="Correo Electrónico" required>
+                            
+                            <h3 class="ingreso mb-4">Ingresar Contraseña</h3>
+                            <input type="password" name="Contra" class="butR mb-3" placeholder="Contraseña" required>
+                            
+                            <h3 class="ingreso mb-4">Confirmar Contraseña</h3>
+                            <input type="password" name="ContraV" class="butR mb-4" placeholder="Verificación Contraseña" required>
+                            
+                            <div>
+                                <input type="submit" class="BottunsRegistrar" name="Registrar" value="Registrar">
                             </div>
                         </form>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
+    </div>
 </body>
 </html>
