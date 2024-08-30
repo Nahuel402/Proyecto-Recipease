@@ -32,18 +32,14 @@ if (isset($_SESSION['error_message'])) {
                 <div class="col-md-6">
                 <div class="container bodReg">
                     <div class="container ">
-               
-
-
                         <form action="../base_de_datos/Chequeo.php" method="POST">
                             <input type="hidden" name="id">
-                            <h3 class="ingreso">Ingresar Email</h3>  <input type="text" name="email" class="butR" placeholder="Email" required>
+                            <h3 class="ingreso">Ingresar Email</h3>  <input type="email" name="email" class="butR" placeholder="Email" required>
                             <h3 class="ingreso">Ingresar Contraseña</h3>  <input type="password" name="Contra" class="butR" placeholder="Contraseña" required>
                             <div class="row BotonRegistro pt-4">
-                            <div class="col-md-12"><input type="submit" class="BottunsRegistrar" value="Acceder"></div>
+                                <div class="col-md-12"><input type="submit" class="BottunsRegistrar" name ="Registrar" value="Acceder"></div>
                             </div>
                         </form>
- 
                     </div>
                 </div>
                 </div>
