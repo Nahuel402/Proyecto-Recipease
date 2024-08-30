@@ -1,6 +1,13 @@
 <?php 
-    session_start();
+session_start();
+
+if (isset($_SESSION['error_message'])) {
+    echo $_SESSION['error_message'];
+    
+    unset($_SESSION['error_message']);
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +32,9 @@
                 <div class="col-md-6">
                 <div class="container bodReg">
                     <div class="container ">
+               
+
+
                         <form action="../base_de_datos/Chequeo.php" method="POST">
                             <input type="hidden" name="id">
                             <h3 class="ingreso">Ingresar Email</h3>  <input type="text" name="email" class="butR" placeholder="Email" required>
@@ -33,6 +43,7 @@
                             <div class="col-md-12"><input type="submit" class="BottunsRegistrar" value="Acceder"></div>
                             </div>
                         </form>
+ 
                     </div>
                 </div>
                 </div>

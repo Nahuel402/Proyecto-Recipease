@@ -1,6 +1,6 @@
-<div class="window-notice" id="window-notice">
-            <div class="content">
-                <div class="content-text BotonRegistro">No te has registrado </div>
-                <div class="content-buttons"><button Onclick="Alert()" id="close-button" class="buttonAlert">Aceptar</button></div>
-            </div>
-        </div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
