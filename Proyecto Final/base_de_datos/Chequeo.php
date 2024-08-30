@@ -14,7 +14,7 @@ $Contra= $_POST["Contra"];
 
 if(isset($ID)){
     if(isset($Email)){
-        $query = mysqli_query ($conn, " SELECT * FROM usuarios WHERE Email == ".$Email." && Contra == ".$Contra."") or die (mysqli_error($conn));
+        $query = mysqli_query ($conn, " SELECT * FROM usuarios WHERE Email == ".$Email." AND Contra == ".$Contra."") or die (mysqli_error($conn));
         while ($row = mysqli_fetch_array($query)){
             if ($Email != $row["Email"] || $Contra != $row['Contra']) {
                 $_SESSION['error_message'] = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
