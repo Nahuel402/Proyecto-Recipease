@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Verificar si el formulario fue enviado correctamente
-if (isset($_POST["Registrar"])) {
+if (isset($_POST["Registrar"]) && isset($_POST["email"]) && isset($_POST["Contra"])) {
     $Email = $_POST["email"];
     $Contra = $_POST["Contra"];
 
@@ -44,7 +44,7 @@ if (isset($_POST["Registrar"])) {
 
     $stmt->close();
 } else {
-    // Si no se ha enviado el formulario, redirigir al acceso
+    // Redirigir si no se enviaron los datos necesarios
     header('Location: ../pages/acceder.php');
     exit();
 }
