@@ -14,7 +14,7 @@ if (isset($_SESSION['error_message'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Esti.css">
+    <link rel="stylesheet" href="../assets/css/Estil.css">
     <title>RecipeEase</title>
 </head>
 <body class="body">

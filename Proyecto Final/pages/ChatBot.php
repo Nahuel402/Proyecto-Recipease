@@ -1,10 +1,28 @@
+<?php
+session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "recipeease";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$imagen= "";
+$nombre= "";
+$query = mysqli_query($conn, " SELECT Nombre, Imagen FROM usuarios WHERE ID = ".$_SESSION["IdUsuario"]."") or die (mysqli_error($conn));
+while ($row = mysqli_fetch_array($query)){
+    $imagen = $row["Imagen"];
+    $nombre = $row["Nombre"];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Esti.css">
+    <link rel="stylesheet" href="../assets/css/Estil.css">
     <title>RecipeEase Chatbot</title>
     <style>
         .chat-input {

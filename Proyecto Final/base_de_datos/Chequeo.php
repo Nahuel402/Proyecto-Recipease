@@ -16,7 +16,7 @@ $nada = "";
 if(isset($ID)){
         $query = mysqli_query ($conn, "SELECT * FROM usuarios WHERE Email = '$Email' AND Contra = '$Contra' ");
         while ($row = mysqli_fetch_array($query)){
-                $_SESSION["Idusuario"] = $row["ID"];
+                $_SESSION["IdUsuario"] = $row["ID"];
                 $_SESSION["Registrado"] = 1;
                 $nada = 1;
                 header("Location:../pages/Chatbot.php"); 
