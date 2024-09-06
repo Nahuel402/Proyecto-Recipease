@@ -147,19 +147,58 @@ a{
     text-align: center;
 }
 .BodyIndex-div-description{
-    width: 70%;
-    padding: 1em 0;
     font-size: 40px;
-    text-align: center;
+    color: #333;
+    margin: 0;
 }
 .BodyIndex-div-description2{
-    font-size: 20px;
+    font-size: 1rem;
+    color: #666;
+    margin: 20px 0;
 }
-.BodyIndex-buttom{
-    font-size: 25px;
-    width: 350px;
-    height: 60px;
-    border-radius: 50px;
+.error{
+    color: red;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px; /* Gap between buttons */
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.left-btn {
+    background-color: #29292945;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    min-height: 60px;
+    min-width: 300px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    flex: 1; 
+}
+
+.right-btn {
+    background-color: #29292945;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    min-height: 60px;
+    min-width: 300px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    flex: 1;
 }
 /*ChatBot*/
 .BodyChat{

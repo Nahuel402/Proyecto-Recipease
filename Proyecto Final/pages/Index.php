@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Esti.css">
+    <link rel="stylesheet" href="../assets/css/Estil.css">
     <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
@@ -26,15 +26,15 @@
                     </div>
                     
                 </div>
-                <div class="row">
+                <div class="button-container ">
                     <div class="col-6 col-md-6 text-center">
                         <a href="acceder.php">
-                            <button class="BodyIndex-Buttom" onclick="Login()">Ingresar</button>
+                            <button class=" left-btn " onclick="Login()">Ingresar</button>
                         </a>
                     </div>
                     <div class="col-6 col-md-6 text-center">
                         <a href="Registrarse.php">
-                            <button class="BodyIndex-Buttom" onclick="Registrar()">Registro</button>
+                            <button class=" right-btn " onclick="Registrar()">Registro</button>
                         </a>
                     </div>
                 </div>

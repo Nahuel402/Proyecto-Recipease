@@ -17,10 +17,14 @@
     <?php 
         include "../includes/header-registro-login.php";
     ?>
-
-<div class="col-lg-12 d-flex justify-content-center align-items-center vh-100">
+    <div class="col-lg-12 d-flex justify-content-center align-items-center vh-100">
         <div class="container bg-dark text-light p-4 rounded shadow" style="max-width: 400px;">
             <div class="text-center mb-4">
+                <?php  
+                    if (isset($_SESSION["IgualE"])){
+                        echo $_SESSION["IgualE"];
+                    }
+                ?>
                 <img src="https://images.vexels.com/media/users/3/235848/isolated/preview/4b62529b242dcef2dbc6719899ecdd6e-chefs-kitchen-hat.png" alt="Carrito" width="80" height="80">
                 <h1 class="h3 mb-4">Registro</h1>
             </div>
@@ -41,9 +45,10 @@
                     <label for="confirmar-contraseña" class="form-label">Confirmar Contraseña</label>
                     <input type="password" class="form-control bg-secondary text-light border-secondary"  name="confirmar-contraseña" placeholder="Confirma tu contraseña">
                     <?php  
-                    if (isset($_SESSION["error"])){
-                        echo"<label class='error'>La contraseña no es la misma</label>";
-                    }?>
+                        if (isset($_SESSION["DistC"])){
+                            echo"<label class='error'>La contraseña no es la misma</label>";
+                        }
+                    ?>
                 </div>
                 <button type="submit" name="Registrar" class="btn btn-dark w-100 mb-3">Registrar</button>
                 <div class="text-center">
