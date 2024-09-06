@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/Estil.css">
-    <script defer src="../assets/js/Cod.js"></script>
-    <script defer src="../assets/js/chatbo.js"></script>
     <title>RecipeEase Chatbot</title>
     <style>
         .chat-input {
@@ -81,5 +79,8 @@
             document.getElementById('response').innerText = responseText;
         }
     </script>
+    <script defer src="../assets/js/Cod.js"></script>
+    <script defer src="../assets/js/chatbo.js"></script>
+    <script defer src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
