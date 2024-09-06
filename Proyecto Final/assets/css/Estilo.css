@@ -3,9 +3,44 @@
    padding: 0;
    margin: 0;
 }
+.body{
+    background-image: url("../images/FondoIndex.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+.BodyIndex-title{
+    font-size: 450%;
+    padding: 1em 0;
+    height: 30%;
+    color: black;
+}
+.BodyIndex-div{
+    text-align: center;
+}
 
+.BodyIndex-div-description{
+    width: 100%;
+    padding: 1em 0;
+    font-size: 40px;
+    
+}
+a{
+    text-decoration: none;
+    color: #3e3e3e;
+}
+.BodyIndex-div-description2{
+    font-size: 20px;
+}
+.error{
+    color: red;
+}
+.body-Login{
+    background-color: rgb(238, 106, 106);
+}
 /*Para todo*/
-body{
+.body{
     background-image: url("../images/FondoIndex.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -15,7 +50,7 @@ body{
 .header{
     top: 0;
     position: fixed;
-    background-color: #0000008e;
+    background-color: #ffffff99;
     width: 100%;
     padding-top: 6px;
     text-align: center;
@@ -25,6 +60,14 @@ body{
 }
 .header-title{
     color: white;
+}
+.alert-BotRegistro{
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+.alert-BotRegistro:hover{
+    color: #3e3e3e;
 }
 .Logo{
     height: 55px;
@@ -55,7 +98,6 @@ body{
 }
 .bodReg{
     background-color: #a7abac9c;
-    width: 700px;
     padding: 20px;
     border-radius: 50px;
     border:solid;
@@ -115,60 +157,11 @@ body{
     color: black;
 }
 /*Index*/
-.BodyIndex{
-    background-color: #a7abacc7;
-    border-radius: 50px;
-    max-width: 70vw;
-    border: 2px solid rgb(36, 36, 36);
-}
-.BodyIndex-title{
-    font-size: 170px;
-    width: 100%;
-    height: 30%;
-    color: black;
-}
-.BodyIndex-div{
-    width: 100%;
-    text-align: center;
-}
-.BodyIndex-div-description{
-    width: 70%;
-    padding: 1em 0;
-    font-size: 40px;
-    text-align: center;
-}
-.BodyIndex-div-description2{
-    font-size: 20px;
-}
-.BodyIndex-buttom{
-    font-size: 25px;
-    width: 350px;
-    height: 60px;
-    border-radius: 50px;
-}
 /*ChatBot*/
 .BodyChat{
-    background-image: url("../images/fondochat.PNG");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-}
-.Chat-body{
-    background-color: #F0D1CA;
-    min-height: 100vh;
-}
-.Chatbot{
-    background-color: #F0D1CA;
-}
-.mensaje{
-    width: 100%;
-    height: 40px;
-}
-.NomRecet{
-    border: solid;
-}
+ background-color: #ffffff;
 
+}
 /*Windows alert*/
 .window-notice {
     background: rgba(33, 41, 52, .85);
@@ -231,4 +224,25 @@ body{
     color: #006AB8;
     text-decoration: underline;
     text-align: justify;
+}
+.chat-message {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+.chat-message.usuario {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.chat-message.bot {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+    text-align: left;
 }

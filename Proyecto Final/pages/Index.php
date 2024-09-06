@@ -1,54 +1,41 @@
-<?php 
-    session_start();
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "recipeease";
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    if (isset($_SESSION["IdUsuario"])){
-        $Nombre= "";
-        $Imagen= "";
-        $query = mysqli_query($conn, "SELECT Nombre, Imagen FROM usuarios") or die(mysqli_error($conn));
-        while ($row = mysqli_fetch_array($query)){
-            $Nombre = $row["Nombre"];
-            $Imagen = $row["Imagen"];
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Estil.css">
+    <link rel="stylesheet" href="../assets/css/Style-Index.css">
     <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
-<body>
+<body class="body">
     <div class="d-flex justify-content-center align-items-center vh-100 text-center">
         <div class="container BodyIndex">
             <div class="row">
                 <div class="col-12">
                     <h1 class="BodyIndex-title">RecipeEase</h1>
                 </div>
-                <div class="col-12 BodyIndex-div text-center align-items-center">
-                    <div class="container">
-                        <p class="BodyIndex-div-description">Bienvenido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar.</p>
-                        <p class="BodyIndex-div-description2">¡Haz clic en el botón de abajo para empezar!</p>
+                <div class="row">
+                    <div class="col-8 BodyIndex-div text-left align-items-center">
+                        <p class="BodyIndex-div-description">
+                            Bienvenido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar.
+                        </p>
+                        <p class="BodyIndex-div-description2">
+                            ¡Haz clic en el botón de abajo para empezar!
+                        </p>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6 text-center mb-3 mb-md-0">
-                            <a href="acceder.php"><button class="BodyIndex-buttom" onclick="Login()">Ingresar</button></a>
-                        </div>
-                        <div class="col-12 col-md-6 text-center">
-                            <a href="Registrarse.php"><button class="BodyIndex-buttom" onclick="Registrar()">Registro</button></a>
-                        </div>
+                    <div class="col-4 col-md-6 text-center">
+                        <a href="acceder.php">
+                            <button class="BodyIndex-Buttom" onclick="Login()">Ingresar</button>
+                        </a>
                     </div>
-                    <br>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 text-center">
+                        <a href="Registrarse.php">
+                            <button class="BodyIndex-Buttom" onclick="Registrar()">Registro</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

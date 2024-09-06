@@ -4,49 +4,45 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "recipeease";
-
-// Conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// Verificar si el formulario fue enviado correctamente
-if (isset($_POST["Registrar"]) && isset($_POST["email"]) && isset($_POST["Contra"])) {
-    $Email = $_POST["email"];
-    $Contra = $_POST["Contra"];
-
-    // Utilizar declaraciones preparadas para evitar inyecciones SQL
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE Email = ? AND Contra = ?");
-    $stmt->bind_param("ss", $Email, $Contra);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // Verificar si se encontró un usuario con las credenciales proporcionadas
-    if ($row = $result->fetch_assoc()) {
-        // Usuario encontrado, establecer las sesiones y redirigir al chatbot
-        $_SESSION["Idusuario"] = $row["ID"];
-        $_SESSION["Registrado"] = 1;
-        header("Location: ../pages/Chatbot.php");
-        exit();
-    } else {
-        // Credenciales incorrectas, mostrar mensaje de error
-        $_SESSION['error_message'] = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-            <strong>Oye!</strong> Has tenido un problema con tu inicio de sesión, intenta de nuevo.<br>
-            No te has registrado? <a href='Registrarse.php' class='BotRegistro'>Haz click aquí</a>
-            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-            <span aria-hidden='true'>&times;</span>
-            </button>
-        </div>";
-        header('Location: ../pages/acceder.php');
-        exit();
+$ID = $_POST["Registrar"];
+$Nombre= $_POST["name"];
+$Email= $_POST["email"];
+$Contra= $_POST["Contra"];
+$Confir= $_POST["confirmar-contraseña"];
+$target_dir="UsuariosImg/";
+$Imagen= "";
+if(isset($_FILES["img"])){
+    if($_FILES["img"]["name"] != ""){
+        $target_file = $target_dir.time().basename($_FILES["img"]["name"]);
+        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+        $Imagen=$target_file;
     }
-
-    $stmt->close();
-} else {
-    // Redirigir si no se enviaron los datos necesarios
-    header('Location: ../pages/acceder.php');
-    exit();
+}
+if ($Contra == $Confir){
+    if(isset($ID)){
+        $sql = "INSERT INTO usuarios ( Nombre, Email, Imagen, Contra) VALUES ('$Nombre', '$Email', '$Imagen', '$Contra')";
+    }else if(!($Imagen=="")){
+        $sql = "UPDATE usuarios set Nombre = '$Nombre', Email = '$Email', Imagen = '$Imagen', Contra = '$Contra' Where ID = '$ID' ";
+    }else{
+        $sql = "UPDATE usuarios set Nombre = '$Nombre', Email = '$Email', Contra = '$Contra' Where ID = '$ID' ";
+    }
+    if ($conn->query($sql) === TRUE){
+        $query = mysqli_query($conn, " SELECT * FROM usuarios WHERE Nombre='$Nombre' AND Contra='$Contra' AND Email='$Email'") or die (mysqli_error($conn));
+        while ($row = mysqli_fetch_array($query)){
+            $_SESSION["IdUsuario"] = $row["ID"];
+            $_SESSION["Registrado"]= 1 ;
+            header("Location:../pages/ChatBot.php");
+        }
+        exit;
+    }
+} else{
+    $_SESSION["error"]= 1;
+    header("Location:../pages/Registrarse.php");
+    echo "Error al insetar registro: " . $conn->error;
 }
 
 $conn->close();

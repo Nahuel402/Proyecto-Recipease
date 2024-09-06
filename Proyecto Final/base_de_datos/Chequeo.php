@@ -4,50 +4,35 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "recipeease";
-
-// Conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$ID = $_POST["Registrar"];
+$Email= $_POST["email"];
+$Contra= $_POST["Contra"];
+$nada = "";
 
-// Verificar si el formulario fue enviado correctamente
-if (isset($_POST["Registrar"])) {
-    $Email = $_POST["email"];
-    $Contra = $_POST["Contra"];
+if(isset($ID)){
+        $query = mysqli_query ($conn, "SELECT * FROM usuarios WHERE Email = '$Email' AND Contra = '$Contra' ");
+        while ($row = mysqli_fetch_array($query)){
+                $_SESSION["Idusuario"] = $row["ID"];
+                $_SESSION["Registrado"] = 1;
+                $nada = 1;
+                header("Location:../pages/Chatbot.php"); 
+        }
+        if ($nada != 1){
+            $_SESSION["error"] = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                    <strong>Ah ocurrido un error!</strong> La contraseña o el correo electronico son incorrectos.
+                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                                </div>";
+            header("Location:../pages/acceder.php");  
+        }
+}   
 
-    // Utilizar declaraciones preparadas para evitar inyecciones SQL
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE Email = ? AND Contra = ?");
-    $stmt->bind_param("ss", $Email, $Contra);
-    $stmt->execute();
-    $result = $stmt->get_result();
 
-    // Verificar si se encontró un usuario con las credenciales proporcionadas
-    if ($row = $result->fetch_assoc()) {
-        // Usuario encontrado, establecer las sesiones y redirigir al chatbot
-        $_SESSION["Idusuario"] = $row["ID"];
-        $_SESSION["Registrado"] = 1;
-        header("Location: ../pages/Chatbot.php");
-        exit();
-    } else {
-        // Credenciales incorrectas, mostrar mensaje de error
-        $_SESSION['error_message'] = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-            <strong>Oye!</strong> Has tenido un problema con tu inicio de sesión, intenta de nuevo.<br>
-            No te has registrado? <a href='Registrarse.php' class='BotRegistro'>Haz click aquí</a>
-            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-            <span aria-hidden='true'>&times;</span>
-            </button>
-        </div>";
-        header('Location: ../pages/acceder.php');
-        exit();
-    }
 
-    $stmt->close();
-} else {
-    // Si no se ha enviado el formulario, redirigir al acceso
-    header('Location: ../pages/acceder.php');
-    exit();
-}
+   
 
 $conn->close();
 ?>

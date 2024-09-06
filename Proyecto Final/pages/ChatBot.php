@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Estil.css">
+    <link rel="stylesheet" href="../assets/css/Estilo.css">
     <script defer src="../assets/js/Cod.js"></script>
     <script defer src="../assets/css/estiloschat.css"></script>
     
@@ -36,10 +36,7 @@ session_start();
 
               
                 <div class="chat-input p-3 bg-light">
-                    <form id="chat-form" action="process_chat.php" method="POST" class="d-flex align-items-center">
-                        <input type="text" name="message" id="chat-input" class="form-control me-3" placeholder="Escribe tu mensaje aquí..." required style="border-radius: 20px;">
-                        <button type="submit" class="btn btn-primary" style="border-radius: 20px; width: 100px;">Enviar</button>
-                    </form>
+                    
                 </div>
             </div>
         </div>
