@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Estil.css">
+    <link rel="stylesheet" href="../assets/css/Esti.css">
     <title>RecipeEase Chatbot</title>
     <style>
         .chat-input {
@@ -37,16 +37,12 @@
 </head>
 <body class="">
     <?php 
-    if(isset($_SESSION["Registrado"])){   
         include "../includes/header-ingresado.php";
-    } else {
-        include "../includes/header.php";
-    }
     ?>
 
-    <div class="container-fluid vh-100 d-flex flex-column justify-content-between p-0">
+    <div class="container-fluid vh-100 d-flex flex-column justify-content-between p-0 ">
         <div class="row w-100 h-100">
-            <div class="col-12 col-md-8 col-lg-6 mx-auto p-0 d-flex flex-column">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto p-0 d-flex flex-column ">
 
                 <div class="chat-header bg-dark text-white p-3">
                     <h4 class="m-0">RecipeEase Chatbot</h4>

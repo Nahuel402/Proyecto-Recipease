@@ -29,10 +29,5 @@ if(isset($ID)){
             header("Location:../pages/acceder.php");  
         }
 }   
-
-
-
-   
-
 $conn->close();
 ?>

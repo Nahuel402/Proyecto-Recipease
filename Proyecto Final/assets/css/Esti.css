@@ -12,10 +12,21 @@ body{
     background-position: center;
     background-size: 100%;
 }
-.header{
+.header-bot{
     top: 0;
     position: fixed;
-    background-color: #0000008e;
+    background-color: #ffffff3e;
+    width: 100%;
+    padding-top: 6px;
+    text-align: center;
+    height: 70px;
+    justify-content: space-around;
+    color: black;
+}
+.header-Reg{
+    top: 0;
+    position: fixed;
+    background-color: #ffffff;
     width: 100%;
     padding-top: 6px;
     text-align: center;
@@ -41,6 +52,10 @@ body{
 .title{
     font-size: 30px;
     color: #fff;
+}
+a{
+    text-decoration: none;
+    color: #3e3e3e;
 }
 .bod{
     background-color: #a7abacc7 ;
@@ -160,6 +175,9 @@ body{
 }
 .Chatbot{
     background-color: #F0D1CA;
+}
+.Chat{
+    max-height: 70vh;
 }
 .mensaje{
     width: 100%;
