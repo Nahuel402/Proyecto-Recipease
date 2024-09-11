@@ -115,6 +115,10 @@ a{
     padding-right: 50px;
     color: black;
 }
+.texto_contacto{
+    font-size: 25px;
+    color: rgb(110, 202, 255);
+}
 .buttonBot{
     height: 80px;
     width: 190px;
