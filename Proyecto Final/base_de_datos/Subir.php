@@ -22,17 +22,11 @@ if(isset($_FILES["img"])){
         $Imagen=$target_file;
     }
 }
-$query = mysqli_query($conn, " SELECT * FROM usuarios") or die (mysqli_error($conn));
-while ($row = mysqli_fetch_array($query)){
-    if($row["Email"] == $Email){
-    $Error=1;
-    }
-}
-if ($Contra == $Confir){
-    $ErrorCotra=1;
-}
+
+
 if(isset($ID)){
     $sql = "INSERT INTO usuarios ( Nombre, Email, Imagen, Contra) VALUES ('$Nombre', '$Email', '$Imagen', '$Contra')";
+    header("Location:../pages/acceder.php");
 }else if(!($Imagen=="")){
     $sql = "UPDATE usuarios set Nombre = '$Nombre', Email = '$Email', Imagen = '$Imagen', Contra = '$Contra' Where ID = '$ID' ";
 }else{
@@ -46,10 +40,7 @@ if ($conn->query($sql) === TRUE){
                             </div>";
         $_SESSION["DistC"]= "";
         header("Location:../pages/Registrarse.php");
-    }else if(isset($ErrorCotra)){
-        $_SESSION["DistC"]= 1;
-        
-        header("Location:../pages/Registrarse.php");
+    }
     }else{
         $_SESSION["IgualE"]="";
         $query = mysqli_query($conn, " SELECT * FROM usuarios WHERE Nombre='$Nombre' AND Contra='$Contra' AND Email='$Email'") or die (mysqli_error($conn));
@@ -60,6 +51,6 @@ if ($conn->query($sql) === TRUE){
         } 
     }
     exit;
-}
+
 $conn->close();
 ?>
