@@ -74,9 +74,7 @@ while ($row = mysqli_fetch_array($query)){
                 </div>
 
                 <div class="chat-input p-3 bg-light">
-                    <div class="response-container">
-                        <!-- This div can be used for additional features or styling -->
-                    </div>
+                    
                     <input type="text" name="message" id="userPrompt" class="form-control me-3" placeholder="Escribe tu mensaje aquí..." required>
                     <button onclick="fetchOpenAIResponse()" type="submit" class="btn btn-primary">Enviar</button>
                 </div>

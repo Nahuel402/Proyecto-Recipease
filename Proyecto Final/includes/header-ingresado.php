@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="../assets/css/Estilo.css">
 <nav class="navbar navbar-expand-lg bg-body-tertiary header-bot">
   <div class="container-fluid">
       <a class="navbar-brand" ><img src="https://images.vexels.com/media/users/3/235848/isolated/preview/4b62529b242dcef2dbc6719899ecdd6e-chefs-kitchen-hat.png" alt="Carrito" width="40" height="40">RecipeEase</a>
@@ -14,12 +14,12 @@
             <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
               <li class='nav-item dropdown'>
-                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                <a class='dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                 $nombre
                 </a>";
               ?>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="EditarPerfil.php">Editar Perfil</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
