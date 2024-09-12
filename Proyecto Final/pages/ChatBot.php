@@ -74,9 +74,6 @@ while ($row = mysqli_fetch_array($query)){
                     </div>
                 </div>
                 <div class="chat-input p-3 bg-light">
-                    <div class="response-container">
-                        <!-- This div can be used for additional features or styling -->
-                    </div>
                     <input type="text" name="message" id="userPrompt" class="form-control me-3" placeholder="Escribe tu mensaje aquí..." required>
                     <!-- Llamada corregida a FetchOpenAIResponse -->
                     <button onclick="FetchOpenAIResponse()" type="submit" class="btn btn-primary">Enviar</button>
@@ -86,7 +83,7 @@ while ($row = mysqli_fetch_array($query)){
     </div>
 </body>
     <script defer src="../assets/js/Cod.js"></script>
-    <script defer src="../pages/chatbot.js"></script>
+    <script defer src="../assets/js/chatbot.js"></script>
     <script defer src="../bootstrap/js/bootstrap.min.js"></script>
 
 </html>

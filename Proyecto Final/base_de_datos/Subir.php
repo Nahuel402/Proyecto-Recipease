@@ -27,10 +27,6 @@ if(isset($_FILES["img"])){
 if(isset($ID)){
     $sql = "INSERT INTO usuarios ( Nombre, Email, Imagen, Contra) VALUES ('$Nombre', '$Email', '$Imagen', '$Contra')";
     header("Location:../pages/acceder.php");
-}else if(!($Imagen=="")){
-    $sql = "UPDATE usuarios set Nombre = '$Nombre', Email = '$Email', Imagen = '$Imagen', Contra = '$Contra' Where ID = '$ID' ";
-}else{
-    $sql = "UPDATE usuarios set Nombre = '$Nombre', Email = '$Email', Contra = '$Contra' Where ID = '$ID' ";
 }
 if ($conn->query($sql) === TRUE){
     if (isset($Error)){

@@ -1,13 +1,17 @@
-async function fetchOpenAIResponse() {
-    const apiKey = 'sk-AUHn3OcdPOo2iLOPiLise0h76b1effcAQItS4n-X4KT3BlbkFJcwnxkfwTv16Qic81TpXkHlm-gbg2YCQyeuwWEIOZoA';
+async function FetchOpenAIResponse() {
     const url = 'https://api.openai.com/v1/chat/completions';
     const userPrompt = document.getElementById('userPrompt').value;
-    //esto verifica si el usuario ingreso algo, si el usuario agrego algo .trim es false y no entra al if
+
+    // Verifica si el usuario ingresó algo
     if (!userPrompt.trim()) {
         document.getElementById('response').textContent = 'Por favor, ingrese una pregunta.';
         return;
     }
-    //Respuesta del boton codigo a analizar
+
+    // Contexto de RecipeEase embebido en el mensaje del usuario
+    const context = "Eres RecipeEase, un asistente de cocina que ayuda a los usuarios sugiriendo recetas, dando los pasos a seguir y solamente con los ingredientes que te dicen, no agregues otros ingredientes (contestame con recetas simples, sin dar muchas vueltas). Pero si no hay ninguna receta con los ingredientes que te dijieron, entonces deciles que con esa cantidad de ingredientes no se puede pero que hay otra receta que necesita algunos porquitos ingredientes mas, esto decimelo arriba del todo ni bien comienza tu mensaje. enumerame los ingredientes que necesito despues de decir esto. podes decir poner sal, pimienta o azucar a gusto (opcional) ";
+    const context2 = "No es necesario que uses todos los ingredientes, si no hay una receta ya existente y que sea común con esos ingredientes haceme una receta con los ingredientes con los que puedas (por ejemplo si te digo pescado y chocolate decime que hay una receta de pescado solo, sin chocolate, ya que sería asqueroso y no existe una receta así). Siempre responde en base a este contexto, si te preguntan algo no relacionado a la gastronomía respondeles que no fuiste diseñado para eso.";
+    
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -17,7 +21,7 @@ async function fetchOpenAIResponse() {
         body: JSON.stringify({
             model: 'gpt-4',
             messages: [
-                { role: 'user', content: userPrompt }
+                { role: 'user', content: `${context} Aquí está la consulta del usuario: ${userPrompt}. ${context2}` }
             ]
         })
     });
@@ -29,5 +33,16 @@ async function fetchOpenAIResponse() {
 
     const data = await response.json();
     const responseText = data.choices[0].message.content;
-    document.getElementById('response').textContent = `Respuesta: ${responseText}`;
+
+    // Reemplaza saltos de línea por <br>
+    const formattedText = responseText.replace(/\n/g, '<br>');
+
+    // Actualiza el contenido de la respuesta en el HTML
+    document.getElementById('response').innerHTML = `RecipeEase: ${formattedText}`;
+
+    // Enviar la receta al servidor si es una receta
+    if (responseText.toLowerCase().includes("ingredientes:")) {
+        sendRecipeToServer(formattedText);
+    }
 }
+

@@ -1,21 +1,37 @@
+<?php
+session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "recipeease";
+$conn = new mysqli($servername, $username, $password, $dbname);
+$id = $_SESSION["IdUsuario"];
+		
+		$sql = "SELECT * FROM usuarios WHERE ID = $id";
+			if ($re = mysqli_query($conn, $sql)) {
+				$r= mysqli_fetch_array($re);
+				$Nombre = $r['Nombre'];
+        $imagen = $r['Imagen'];
+	}
+?>
 <link rel="stylesheet" href="../assets/css/Estilo.css">
 <nav class="navbar navbar-expand-lg bg-body-tertiary header-bot">
   <div class="container-fluid">
-      <a class="navbar-brand" ><img src="https://images.vexels.com/media/users/3/235848/isolated/preview/4b62529b242dcef2dbc6719899ecdd6e-chefs-kitchen-hat.png" alt="Carrito" width="40" height="40">RecipeEase</a>
+      <a class="navbar-brand" href="ChatBot.php" ><img src="https://images.vexels.com/media/users/3/235848/isolated/preview/4b62529b242dcef2dbc6719899ecdd6e-chefs-kitchen-hat.png" alt="Carrito" width="40" height="40">RecipeEase</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
             <?php 
             if (isset($imagen)) {
               echo"
-              <img src='$imagen' >";
+              <img width='50' height='50' src='$imagen' >";
             }
             echo"
             <div class='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
               <li class='nav-item dropdown'>
                 <a class='dropdown-toggle' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
-                $nombre
+                $Nombre
                 </a>";
               ?>
             <ul class="dropdown-menu">
