@@ -58,7 +58,8 @@ while ($row = mysqli_fetch_array($query)){
         include "../includes/header-ingresado.php";
     ?>
 
-    <div class="container-fluid vh-100 d-flex flex-column justify-content-between p-0 ">
+    
+<div class="container-fluid vh-100 d-flex flex-column justify-content-between p-0 ">
         <div class="row w-100 h-100">
             <div class="col-12 col-md-8 col-lg-6 mx-auto p-0 d-flex flex-column ">
 
@@ -72,27 +73,20 @@ while ($row = mysqli_fetch_array($query)){
                         <p id="response">Aquí se mostrará la respuesta del chatbot.</p>
                     </div>
                 </div>
-
                 <div class="chat-input p-3 bg-light">
-                    
+                    <div class="response-container">
+                        <!-- This div can be used for additional features or styling -->
+                    </div>
                     <input type="text" name="message" id="userPrompt" class="form-control me-3" placeholder="Escribe tu mensaje aquí..." required>
-                    <button onclick="fetchOpenAIResponse()" type="submit" class="btn btn-primary">Enviar</button>
+                    <!-- Llamada corregida a FetchOpenAIResponse -->
+                    <button onclick="FetchOpenAIResponse()" type="submit" class="btn btn-primary">Enviar</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        function fetchOpenAIResponse() {
-            // Simulate fetching response (replace this with actual API call)
-            var responseText = "Esta es una respuesta simulada del chatbot."; // Replace this with actual response from the API
-            
-            // Update the response text in the HTML
-            document.getElementById('response').innerText = responseText;
-        }
-    </script>
-    <script defer src="../assets/js/Cod.js"></script>
-    <script defer src="../assets/js/chatbo.js"></script>
-    <script defer src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
+    <script defer src="../assets/js/Cod.js"></script>
+    <script defer src="../pages/chatbot.js"></script>
+    <script defer src="../bootstrap/js/bootstrap.min.js"></script>
+
 </html>
