@@ -13,7 +13,7 @@ $Nombre= $_POST["name"];
 $Email= $_POST["email"];
 $Contra= $_POST["Contra"];
 $Confir= $_POST["confirmar-contraseña"];
-$target_dir="../assets/imagen";
+$target_dir="../assets/images/";
 $Imagen =$_FILES['imagen'];
 
 if(isset($_SESSION["IdUsuario"])){

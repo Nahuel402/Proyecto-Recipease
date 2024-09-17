@@ -13,15 +13,9 @@ $Nombre= $_POST["name"];
 $Email= $_POST["email"];
 $Contra= $_POST["Contra"];
 $Confir= $_POST["confirmar-contraseña"];
-$target_dir="UsuariosImg/";
-$Imagen= "";
-if(isset($_FILES["img"])){
-    if($_FILES["img"]["name"] != ""){
-        $target_file = $target_dir.time().basename($_FILES["img"]["name"]);
-        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
-        $Imagen=$target_file;
-    }
-}
+
+$Imagen= "../assets/images/default.png";
+
 
 
 if(isset($ID)){

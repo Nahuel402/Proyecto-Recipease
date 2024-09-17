@@ -1,5 +1,6 @@
 async function FetchOpenAIResponse() {
-    const url = 'https://api.openai.com/v1/chat/completions';
+    const apiKey = '';
+    const url = '';
     const userPrompt = document.getElementById('userPrompt').value;
 
     // Verifica si el usuario ingresó algo
@@ -39,7 +40,7 @@ async function FetchOpenAIResponse() {
 
     // Actualiza el contenido de la respuesta en el HTML
     document.getElementById('response').innerHTML = `RecipeEase: ${formattedText}`;
-
+    $sql = "UPDATE usuarios set Imagen = '$Imagen' Where ID = '$ID' ";
     // Enviar la receta al servidor si es una receta
     if (responseText.toLowerCase().includes("ingredientes:")) {
         sendRecipeToServer(formattedText);
