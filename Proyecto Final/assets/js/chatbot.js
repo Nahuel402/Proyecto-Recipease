@@ -1,6 +1,6 @@
 async function FetchOpenAIResponse() {
     const apiKey = '';
-    const url = '';
+    const url = 'https://api.openai.com/v1/chat/completions';
     const userPrompt = document.getElementById('userPrompt').value;
 
     // Verifica si el usuario ingresó algo

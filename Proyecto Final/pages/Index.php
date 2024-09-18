@@ -21,9 +21,10 @@
                             Bienvenido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar.
                         </p>
                         <p class="BodyIndex-div-description2">
-                            🠋🠋 Ingresate para empezár a cocinar con RecipeEase 🠋🠋
+                            ¡Haz clic en el botón de abajo para empezar!
                         </p>
                     </div>
+                    
                 </div>
                 <div class="button-container ">
                     <div class="col-6 col-md-6 text-center">
