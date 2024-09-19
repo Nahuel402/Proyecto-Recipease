@@ -3,7 +3,13 @@
    padding: 0;
    margin: 0;
 }
-
+.body{
+    background-image: url("../images/FondoIndex.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
 .BodyIndex-title{
     font-size: 450%;
     padding: 1em 0;
@@ -36,7 +42,13 @@ a{
     background-color: rgb(238, 106, 106);
 }
 /*Para todo*/
-
+.body{
+    background-image: url("../images/FondoIndex.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
 .header{
     top: 0;
     position: fixed;

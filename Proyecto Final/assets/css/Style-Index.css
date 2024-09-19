@@ -1,11 +1,10 @@
-.body-beish{
-    background-color: #FDEEDC;
-
+.body{
+    background-image: url("../images/FondoIndex.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
-.body-naranja{
-    background-color: #F1A661;
-}
-
 .BodyIndex-title{
     font-size: 450%;
     padding: 1em 0;
