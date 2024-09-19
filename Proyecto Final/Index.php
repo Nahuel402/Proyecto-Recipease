@@ -77,7 +77,7 @@
     <div id="chat-container">
         <div id="messages"></div>
         <div id="input-area">
-            <input type="text" id="message-input" placeholder="Escribe un mensaje">
+            <input type="text" id="message-input"  placeholder=" holaEscribe un mensaje">
             <button onclick="sendMessage()">Enviar</button>
         </div>
     </div>
