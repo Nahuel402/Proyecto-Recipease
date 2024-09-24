@@ -1,0 +1,250 @@
+*{
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+   padding: 0;
+   margin: 0;
+}
+.body{
+    background-image: url("../images/FondoIndex.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+.BodyIndex-title{
+    font-size: 450%;
+    padding: 1em 0;
+    height: 30%;
+    color: black;
+}
+.BodyIndex-div{
+    text-align: center;
+}
+.img{
+    width: 150px;
+    height: 150px;
+       }
+.BodyIndex-div-description{
+    width: 100%;
+    padding: 1em 0;
+    font-size: 40px;
+}
+a{
+    text-decoration: none;
+    color: #222222;
+}
+.BodyIndex-div-description2{
+    font-size: 20px;
+}
+.error{
+    color: red;
+}
+.body-Login{
+    background-color: rgb(238, 106, 106);
+}
+/*Para todo*/
+.body{
+    background-image: url("../images/FondoIndex.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+.header{
+    top: 0;
+    position: fixed;
+    background-color: #ffffff;
+    width: 100%;
+    padding-top: 6px;
+    text-align: center;
+    height: 70px;
+    justify-content: space-around;
+    color: black;
+}
+.header-title{
+    color: white;
+}
+.alert-BotRegistro{
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+.alert-BotRegistro:hover{
+    color: #3e3e3e;
+}
+.Logo{
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
+}
+.buttonTop{
+    height: 45px;
+    width: 140px;
+    border-radius: 50px;
+    font-size: 20px;
+    position: center;
+}
+.title{
+    font-size: 30px;
+    color: #fff;
+}
+.bod{
+    background-color: #a7abacc7 ;
+    border-radius: 50px;
+    height: 750px;
+    border: solid;
+    border-color: black;
+    position: center;
+}
+.espacioTop{
+    padding-top: 100px;
+}
+.bodReg{
+    background-color: #a7abac9c;
+    padding: 20px;
+    border-radius: 50px;
+    border:solid;
+    border-color: black;
+}
+.center{
+    text-align: center;
+}
+.titlebod{
+    font-size: 120px;
+    text-align: center;
+    color: black;
+}
+.texto{
+    font-size: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: black;
+}
+.buttonBot{
+    height: 80px;
+    width: 190px;
+    background-color: white;
+    border-radius: 50px;
+    font-size: 30px;
+}
+.registro{
+    text-align: center;
+}
+.registroAcceso{
+    text-align: center;
+    padding: 90px;
+}
+.butR{
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50px;
+}
+.ImgInput{
+    width: 90px;
+    height: 50px;
+    text-align: center;
+}
+.ImgInput-Imagen{
+    height: 150px;
+    text-align: center;
+}
+.BottunsRegistrar{
+    height: 60px;
+    width: 130px;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.ingreso{
+    font-size: 30px;
+    color: black;
+}
+/*Index*/
+/*ChatBot*/
+.BodyChat{
+ background-color: #ffffff;
+
+}
+/*Windows alert*/
+.window-notice {
+    background: rgba(33, 41, 52, .85);
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    transition: background .6s;
+}
+.window-notice .content {
+    background: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px;
+    min-width: 320px !important;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+
+.content-buttons {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.buttonAlert{
+    width: 120px;
+    height: 50px;
+    border-radius: 50px;
+}
+.content-buttons a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem;
+    background-color: #0080DE;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.content-buttons a:hover {
+    background-color: #006AB8;
+}
+
+.content-text a {
+    color: #0080DE;
+    text-decoration: none;
+}
+
+.content-text a:hover {
+    color: #006AB8;
+    text-decoration: underline;
+    text-align: justify;
+}
+.chat-message {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+.chat-message.usuario {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.chat-message.bot {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+    text-align: left;
+}
