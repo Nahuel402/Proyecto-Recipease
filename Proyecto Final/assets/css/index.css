@@ -1,0 +1,32 @@
+
+.BodyIndex {
+    background-color: #a7abacc7;
+    border-radius: 50px;
+    max-width: 70vw;
+    border: 2px solid rgb(36, 36, 36);
+}
+
+.BodyIndex-title {
+    font-size: 170px;
+    color: black;
+}
+
+.BodyIndex-div {
+    text-align: center;
+}
+
+.BodyIndex-div-description {
+    font-size: 40px;
+    color: #333;
+}
+
+.BodyIndex-div-description2 {
+    font-size: 1rem;
+    color: #666;
+    margin: 20px 0;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+}

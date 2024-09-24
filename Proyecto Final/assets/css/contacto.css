@@ -1,0 +1,11 @@
+.container {
+    background-color: #333; 
+    color: #FFF; 
+}
+.texto_contacto {
+    color: #F1A661; 
+    text-decoration: none;
+}
+.texto_contacto:hover {
+    text-decoration: underline;
+}
