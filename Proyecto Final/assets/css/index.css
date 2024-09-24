@@ -33,7 +33,9 @@ body {
 
 /* Left Side */
 .left-side {
-    background-color: #000000;
+    background-image: url("../images/ImagenLeft.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
     width: 50%;
     height: 600px;border-radius: 50px 0 0 50px ;
     padding: 50px;
@@ -41,6 +43,7 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    border: solid 5px;
 }
 
 /* Right Side */

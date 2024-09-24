@@ -45,7 +45,7 @@ if (empty($imagen)) {
       </ul>
       <div class="p-3">
       <?php 
-          echo "<img class='rounded-circle me-2' width='50' height='50' src='$imagen' alt='Imagen de perfil'>";
+          echo "<img class='rounded-circle me-2' width='50' height='50' src='$imagen'>";
       ?>
       </div>
       

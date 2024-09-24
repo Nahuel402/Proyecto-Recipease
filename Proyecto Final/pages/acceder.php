@@ -1,5 +1,7 @@
 <?php 
 session_start();
+$_SESSION["IgualE"] = " ";
+$_SESSION["DistC"] = " ";
 
 if (isset($_SESSION['error_message'])) {
     echo $_SESSION['error_message'];
@@ -41,7 +43,7 @@ if (isset($_SESSION['error_message'])) {
                 </div>
                 <?php 
                     if(isset($_SESSION["error"])){
-                        echo '<div class="alert alert-danger">'.$_SESSION["error"].'</div>';
+                        echo $_SESSION["error"];
                     }
                 ?>
                 <button type="submit" name="Registrar" class="btn w-100 mb-3">Ingresar</button>

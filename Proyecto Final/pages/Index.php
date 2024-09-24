@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION["IgualE"] = " ";
+$_SESSION["DistC"] = " ";
+$_SESSION["error"]= " ";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
