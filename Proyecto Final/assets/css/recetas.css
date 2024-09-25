@@ -1,0 +1,21 @@
+
+h1 {
+    color: #F1A661; 
+}
+.table {
+    background-color: #fff; 
+}
+.table th {
+    background-color: #F1A661;
+    color: #fff; 
+}
+.table td {
+    color: #000; 
+}
+.btn-custom {
+    background-color: #F1A661; 
+    color: #fff; 
+}
+.btn-custom:hover {
+    background-color: #D89A4D; 
+}
