@@ -14,12 +14,17 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+<<<<<<< HEAD
 // Verificar si se recibieron los datos del POST y el ID del usuario
 if (isset($_POST['title']) && isset($_SESSION['IdUsuario'])) {
+=======
+if (isset($_POST['title'])) {
+>>>>>>> b3367a20d16705255057f37c5abc14436de62b12
     $title = $conn->real_escape_string($_POST['title']);
     $instructions = isset($_POST['instructions']) ? $conn->real_escape_string($_POST['instructions']) : '';
     $ingredients = isset($_POST['ingredients']) ? $conn->real_escape_string($_POST['ingredients']) : '';
 
+<<<<<<< HEAD
     // Obtener el ID del usuario de la sesión
     $userId = $conn->real_escape_string($_SESSION['IdUsuario']);
 
@@ -48,3 +53,16 @@ if (isset($_POST['title']) && isset($_SESSION['IdUsuario'])) {
 // Cerrar la conexión
 $conn->close();
 ?>
+=======
+    // Verificar si el ID del usuario está disponible
+    if (isset($_SESSION['IdUsuario'])) {}
+    else if (isset($_POST['instructions'])) { // Aquí faltaba el cierre del paréntesis
+        $userId = $conn->real_escape_string($_SESSION['IdUsuario']);
+        // Preparar la consulta SQL
+        $sql = "INSERT INTO `recetas recientes` (NomReceta, Id_usuario, Receta, Ingredientes) VALUES ('$title', '$userId', '$instructions', '$ingredients')";
+    }}
+
+$conn->close();
+?>
+
+>>>>>>> b3367a20d16705255057f37c5abc14436de62b12

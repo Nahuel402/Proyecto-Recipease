@@ -11,15 +11,9 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav text-end ">
         <li class="nav-item dropdown">
-        <a href="../pages/Contacto.php"> 
-      <p>Contacto</p>
-     </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="EditarPerfil.php">Editar Perfil</a></li>
-            <li><a class="dropdown-item" href=""></a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="../base_de_datos/CerrarSession.php">Cerrar Sesión</a></li>
-          </ul>
+          <a href="../pages/Contacto.php"> 
+            <button class="btn">Contacto</button>
+          </a>
         </li>
       </ul>
       

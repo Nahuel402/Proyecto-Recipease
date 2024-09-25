@@ -51,7 +51,7 @@ if ($re = mysqli_query($conn, $sql)) {
                     <label for="imagen" class="form-label">Imagen de Perfil</label>
                     <input type="file" class="form-control file-input" name="imagen" accept="image/*" id="imageUpload">
                 </div>
-                <button type="submit" name="Registrar" class="btn btn-edit w-100">Editar</button>
+                <button type="submit" name="Editar" class="btn btn-edit w-100">Editar</button>
             </form>
         </div>
     </div>

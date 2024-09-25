@@ -1,6 +1,7 @@
 <?php 
 session_start();
 $ID = -1;
+$_SESSION["error"] = " ";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,7 +125,7 @@ $ID = -1;
                     <input type="password" class="form-control" name="confirmar-contraseña" placeholder="Confirma tu contraseña">
                     <?php  
                         if (isset($_SESSION["DistC"])){
-                            echo "<label class='error'>La contraseña no es la misma</label>";
+                            echo $_SESSION["DistC"];
                         }
                     ?>
                 </div>

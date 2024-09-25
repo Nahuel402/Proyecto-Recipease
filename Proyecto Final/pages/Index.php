@@ -11,12 +11,16 @@ $_SESSION["error"]= " ";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/index.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../assets/css/globales.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/alerts.css">
     
 
    
+=======
+    <script defer src="../assets/js/Cod.js"></script>
+>>>>>>> b3367a20d16705255057f37c5abc14436de62b12
     <title>RecipeEase</title>
 </head>
 <body class="body">
