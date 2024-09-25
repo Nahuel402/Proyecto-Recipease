@@ -6,18 +6,16 @@
       RecipeEase
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"><img src="../assets/images/list.svg" class="LogoCelu"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav text-end ">
         <li class="nav-item dropdown">
-        <a href="../pages/Index.php"> 
-      <p>Inicio</p>
-     </a>
+          <a href="../pages/Index.php"> 
+              <button class="btn">Inicio</button>
+          </a>
         </li>
       </ul>
-      
-      
     </div>
   </div>
 </nav>
