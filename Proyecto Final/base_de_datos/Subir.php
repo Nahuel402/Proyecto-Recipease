@@ -66,7 +66,6 @@ if (isset($ID)) {
                                     <strong>¡Error!</strong> Ya existe un usuario con ese correo.
                                     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                                 </div>";
-<<<<<<< HEAD
             header("Location:../pages/Registrarse.php");
         }else{
             $_SESSION["IgualE"] = " ";
@@ -82,24 +81,6 @@ if (isset($ID)) {
             }else {
                 
             header("Location:../pages/Registrarse.php");
-=======
-        header("Location: ../pages/Registrarse.php");
-    } else {
-        $_SESSION["IgualE"] = " ";
-        $_SESSION["DistC"] = " ";
-
-        // Insertar el usuario en la base de datos con el rol asignado
-        $sql = "INSERT INTO usuarios (Nombre, Email, Contra, Imagen, role) VALUES ('$Nombre', '$Email', '$Contra', '$Imagen', '$role')";
-        if ($conn->query($sql) === TRUE) {
-            // Obtener el ID del usuario recién creado
-            $query = mysqli_query($conn, "SELECT ID FROM usuarios WHERE Nombre='$Nombre' AND Contra='$Contra' AND Email='$Email'");
-            while ($row = mysqli_fetch_array($query)) {
-                $_SESSION["IdUsuario"] = $row["ID"];
-                $_SESSION["Registrado"] = 1;
-
-                // Redirigir a la página de chat
-                header("Location: ../pages/ChatBot.php");
->>>>>>> 76802f900ef7ed84ed47f41e24fde42cce905d90
             }
         } else {
             header("Location: ../pages/Registrarse.php");
