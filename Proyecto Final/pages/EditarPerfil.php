@@ -24,7 +24,7 @@ if ($re = mysqli_query($conn, $sql)) {
     <title>Editar Perfil - RecipeEase</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/globales.css">
-    <link rel="stylesheet" href="../assets/css/editarperfil.css">
+    <link rel="stylesheet" href="../assets/css/editarperfils.css">
 
 </head>
 <body>

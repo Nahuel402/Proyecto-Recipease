@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_array($query)) {
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/globales.css">
     <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/recetas.css">
+    <link rel="stylesheet" href="../assets/css/recetass.css">
     <title>Historial de Recetas - RecipeEase</title>
 </head>
 <body>

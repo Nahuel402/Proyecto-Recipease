@@ -18,7 +18,7 @@ if (isset($_SESSION['error_message'])) {
     <link rel="stylesheet" href="../assets/css/globales.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/alerts.css">
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/loginn.css">
     <title>RecipeEase</title>
     
 </head>
@@ -29,16 +29,16 @@ if (isset($_SESSION['error_message'])) {
     <div class="col-lg-12 d-flex justify-content-center align-items-center vh-100">
         <div class="container text-dark p-4 rounded shadow">
             <div class="text-center mb-4">
-                <img src="https://images.vexels.com/media/users/3/235848/isolated/preview/4b62529b242dcef2dbc6719899ecdd6e-chefs-kitchen-hat.png" alt="Carrito" width="80" height="80">
-                <h1 class="h3 mb-4">Iniciar sesión</h1>
+                <img id="filtrado" src="../assets/images/Looo.svg" width="80" height="80">
+                <h1 class="h3 mb-4 title">Iniciar sesión</h1>
             </div>
             <form action="../base_de_datos/Chequeo.php" method="POST">
                 <div class="mb-3">
-                    <label for="correo" class="form-label">Correo</label>
+                    <label for="correo" class="form-label description">Correo</label>
                     <input type="email" class="form-control" name="email" placeholder="Ingresa tu correo" required>
                 </div>
                 <div class="mb-4">
-                    <label for="contraseña" class="form-label">Contraseña</label>
+                    <label for="contraseña" class="form-label description">Contraseña</label>
                     <input type="password" class="form-control" name="Contra" placeholder="Ingresa tu contraseña" required>
                 </div>
                 <?php 
@@ -48,7 +48,7 @@ if (isset($_SESSION['error_message'])) {
                 ?>
                 <button type="submit" name="Registrar" class="btn w-100 mb-3">Ingresar</button>
                 <div class="text-center">
-                    <a href="Registrarse.php">¿No tienes cuenta? ¡Regístrate aquí!</a>
+                    <a href="Registrarse.php" >¿No tienes cuenta? ¡Regístrate aquí!</a>
                 </div>
             </form>
         </div>

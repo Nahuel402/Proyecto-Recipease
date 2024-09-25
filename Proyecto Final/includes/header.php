@@ -11,7 +11,7 @@ if (isset($_SESSION["IdUsuario"])){
 <nav class="navbar navbar-expand-lg bg-body-tertiary header">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo $Direc;?>">
-      <img src="https://images.vexels.com/media/users/3/235848/isolated/preview/4b62529b242dcef2dbc6719899ecdd6e-chefs-kitchen-hat.png" alt="Carrito" width="40" height="40">
+      <img id="filtrado" src="../assets/images/Looo.svg" width="40" height="40">
       RecipeEase
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@ if (isset($_SESSION["IdUsuario"])){
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav text-end ">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color : color: #222222;";>
+          <a class="nav-link dropdown-toggle nombreU" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color : color: #222222;";>
             <?php echo $nombre; ?>
           </a>
           <ul class="dropdown-menu">
@@ -33,7 +33,7 @@ if (isset($_SESSION["IdUsuario"])){
       </ul>
       <div class="p-3">
       <?php 
-          echo "<img class='rounded-circle me-2' width='50' height='50' src='$imagen'>";
+          echo "<img class='rounded-circle me-2' width='50' height='50' id='filtrado'src='$imagen'>";
       ?>
       </div>
       

@@ -1,8 +1,8 @@
 <?php
-session_start();
-$_SESSION["IgualE"] = " ";
-$_SESSION["DistC"] = " ";
-$_SESSION["error"]= " ";
+    session_start();
+    $_SESSION["IgualE"] = " ";
+    $_SESSION["DistC"] = " ";
+    $_SESSION["error"]= " ";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,16 +10,14 @@ $_SESSION["error"]= " ";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/indexx.css">
     <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>
 <body class="body">
     <div class="container-index">
-        <!-- Left Section -->
-        <div class="left-side">
+        <div class="left-side ">
         </div>
-        <!-- Right Section -->
         <div class="right-side">
             <div class="content">
                 <h1 class="title">RecipeEase</h1>

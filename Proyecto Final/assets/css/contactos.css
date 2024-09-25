@@ -3,15 +3,16 @@
     color: #FFF; 
 }
 .texto_contacto {
-    color: #F1A661; 
+    color: #ffffff; 
     text-decoration: none;
 }
 .texto_contacto:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #ffffff; 
 }
 
 .btn {
-    background-color: #000; 
+    background-color: #264653; 
     color: #FDEEDC; 
-    border: 2px solid #F1A661; 
+    border: 2px solid #000000; 
 }

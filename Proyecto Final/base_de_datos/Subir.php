@@ -56,7 +56,7 @@ if(isset($ID)){
         }else{
             $_SESSION["IgualE"] = " ";
             $_SESSION["DistC"] = " ";
-            $sql = "INSERT INTO usuarios (Nombre,Email,Contra,Imagen) VALUES ('$Nombre', '$Email', '$Contra', 'Aun no se ah ingresado una Imagen')";
+            $sql = "INSERT INTO usuarios (Nombre,Email,Contra,Imagen) VALUES ('$Nombre', '$Email', '$Contra', '../assets/images/person.svg')";
             if($conn->query($sql) == TRUE) {
                 $query = mysqli_query($conn, " SELECT ID FROM usuarios WHERE Nombre='$Nombre' AND Contra='$Contra' AND Email='$Email'") or die (mysqli_error($conn));
                 while ($row = mysqli_fetch_array($query)){

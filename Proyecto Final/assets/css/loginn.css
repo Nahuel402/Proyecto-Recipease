@@ -1,3 +1,6 @@
+body{
+    background-color: #e5e5e5;
+}
 .butR {
     width: 100%; 
     max-width: 500px; 
@@ -5,6 +8,9 @@
     text-align: center;
     border-radius: 50px;
     margin: 0 auto; 
+}
+.Redir{
+    color: #ffffff; 
 }
 
 @media (min-width: 768px) {
@@ -29,15 +35,21 @@
 }
 
 .container {
-    background-color: #F1A661; 
+    background-color: #000000bb;
     border: 2px solid #000; 
     padding: 20px;
     border-radius: 10px; 
     max-width: 400px; 
     margin: auto; 
 }
+.title{
+    color: white;
+}
+.description{
+    color: white;
+}
 .form-control {
-    background-color: #FDEEDC; 
+    background-color:#e5e5e5; 
     color: #000; 
     border-color: #000; 
 }
@@ -45,19 +57,19 @@
     color: #666;
 }
 .btn {
-    background-color: #000; 
-    color: #FDEEDC; 
-    border: 2px solid #F1A661; 
+    background-color: #264653; 
+    color: #e5e5e5; 
+    border: 2px solid #000000; 
 }
 .btn:hover {
-    background-color: #F1A661; 
+    background-color: #79a7b9; 
     color: #000; 
     border: 2px solid #000; 
 }
 .text-center a {
-    color: #FDEEDC; 
+    color: #ffffff; 
     text-decoration: none;
 }
 .text-center a:hover {
-    color: #000; 
+    color: #000000; 
 }

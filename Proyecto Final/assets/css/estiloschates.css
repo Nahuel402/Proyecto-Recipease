@@ -1,35 +1,32 @@
 body {
-    background-color: #f4f4f4; /* Color de fondo */
-}
-
-/* Diseño del Chatbot */
-.encabezado-chat {
-    background-color: #f1a661; /* Color de fondo del encabezado */
-    color: white; /* Color del texto */
-    padding: 15px; /* Espaciado interno */
-    font-size: 24px; /* Tamaño de fuente */
+    background-color: #e5e5e5;
 }
 
 .entrada-chat {
-    background-color: white; /* Color de fondo de la entrada de chat */
-    padding: 15px; /* Espaciado interno */
-    display: flex; /* Usar flexbox para el diseño */
-    justify-content: space-between; /* Espaciado entre elementos */
-    align-items: center; /* Alinear elementos verticalmente */
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Sombra del cuadro de entrada */
-    position: relative; /* Permite posicionar elementos dentro de esta sección */
-    bottom: 0; /* Posiciona la entrada al fondo */
+    background-color: white; 
+    padding: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; 
+    bottom: 0; 
+    width: 70%;
 }
 
+.nombreU:focus{
+    
+    color: #ffffff;
+}
 .entrada-chat input {
-    width: 80%; /* Ancho del campo de entrada */
-    border-radius: 8px; /* Bordes redondeados */
-    border: 1px solid #ccc; /* Borde */
-    padding: 10px; /* Espaciado interno */
+    width: 80%; 
+    border-radius: 8px; 
+    border: 1px solid #ccc;
+    padding: 10px; 
 }
 
 .entrada-chat button {
-    background-color: #f1a661; /* Color de fondo del botón */
+    background-color: #264653; /* Color de fondo del botón */
     border: none; /* Sin borde */
     color: white; /* Color del texto */
     padding: 10px 20px; /* Espaciado interno */
@@ -38,7 +35,7 @@ body {
 }
 
 .entrada-chat button:hover {
-    background-color: #e07b39; /* Color de fondo del botón al pasar el mouse */
+    background-color: #79a7b9; /* Color de fondo del botón al pasar el mouse */
 }
 
 /* Estilos de Respuesta del Chatbot */
@@ -53,7 +50,7 @@ body {
 .titulo-respuesta {
     font-size: 24px; /* Tamaño de fuente del título de respuesta */
     font-weight: bold; /* Negrita */
-    color: #f1a661; /* Color del título */
+    color: #000000bb; /* Color del título */
     margin-bottom: 10px; /* Margen inferior */
     text-align: center; /* Centrar texto */
 }
@@ -63,7 +60,7 @@ body {
 }
 
 .seccion-respuesta h3 {
-    background-color: #f1a661; /* Color de fondo del encabezado de sección */
+    background-color: #000000bb; /* Color de fondo del encabezado de sección */
     color: white; /* Color del texto */
     padding: 10px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
@@ -91,7 +88,7 @@ body {
 }
 
 .seccion-historial h4 {
-    background-color: #f1a661; /* Color de fondo del encabezado del historial */
+    background-color: #000000bb; /* Color de fondo del encabezado del historial */
     color: white; /* Color del texto */
     padding: 10px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
@@ -109,11 +106,11 @@ body {
 
 .seccion-historial ul li a {
     text-decoration: none; /* Sin subrayado */
-    color: #f1a661; /* Color del enlace */
+    color: #000000; /* Color del enlace */
 }
 
 .seccion-historial ul li a:hover {
-    color: #e07b39; /* Color del enlace al pasar el mouse */
+    color: #0000005d; /* Color del enlace al pasar el mouse */
 }
 
 /* Estilo para la sección del chat para ocupar más espacio */

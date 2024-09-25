@@ -7,12 +7,11 @@
 }
 body {
     display: flex;
-    background-color: #FDEEDC;
+    background-color:  #e5e5e5 ;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    background-color: #f9f9f9;
 }
 
 /* Header Styling */
@@ -33,30 +32,34 @@ body {
 
 /* Left Side */
 .left-side {
-    background-image: url("../images/ImagenLeft.jpg");
+    background-image: url("../images/FondoCelulr.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    width: 50%;
-    height: 600px;border-radius: 50px 0 0 50px ;
+    background-size: 100%;
+    width: 100%;
+    height: 1000px;
+    border-radius: 50px 0 0 50px ;
     padding: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border: solid 5px;
+    box-shadow: -5px 6px 5px 7px rgba(0, 0, 0, 0.2);
 }
 
 /* Right Side */
 .right-side {
-    background-color: #a7abacc7;
-    width: 60%;
-    height: 600px;
+    
+    background-color: #000000bb;
+    width: 100%;
+    height: 1000px;
     border-radius: 0 50px 50px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     padding: 50px;
+    box-shadow: 9px 6px 5px 7px rgba(0, 0, 0, 0.2);
 }
 
 .container-index {
@@ -69,18 +72,17 @@ body {
     max-width: 1200px;  /* Default width */
     width: 100%;
 }
-
 /* Updated Title Styles */
 .title {
     font-size: 4rem;  /* Larger title */
     font-weight: 900;
-    color: #333;
+    color: #ffffff;
     margin-top: 20px;
 }
 
 .description {
     font-size: 1.2rem;
-    color: #666;
+    color: #ffffff;
     margin-top: 20px;
     width: 100%;
     margin-bottom: 10px;
@@ -88,18 +90,19 @@ body {
 
 .sub-description {
     font-size: 1.3rem;
-    color: #888;
+    color: #7b7d7e;
     margin-bottom: 50px;
 }
 
 /* Button Styles */
 button:hover {
-    background-color: #ddd;
+    background-color: #79a7b9;
+    color: #2b2b2b;
 }
 
 .left-btn,
 .right-btn {
-    background-color: #29292945;
+    background-color:  #264653;
     color: white;
     padding: 10px 20px;
     font-size: 1rem;
@@ -132,7 +135,7 @@ button:hover {
 /* Small devices (up to 600px wide) */
 @media (max-width: 600px) {
     .body{
-        background-color: #FDEEDC;
+        background-color: #e5e5e5;
     }
     .container {
         padding: 40px 30px;
@@ -167,7 +170,7 @@ button:hover {
 /* Medium devices (600px - 900px) */
 @media (min-width: 600px) and (max-width: 900px) {
     .body{
-        background-color: #FDEEDC;
+        background-color: #e5e5e5;
     }
     .container {
         padding: 60px 50px;
@@ -201,7 +204,7 @@ button:hover {
 /* Large devices (above 900px wide) */
 @media (min-width: 900px) {
     .body{
-        background-color: #FDEEDC;
+        background-color: #e5e5e5;
     }
     .container-index {
         max-width: 1500px;  /* Make the container bigger for desktop */
@@ -238,11 +241,18 @@ button:hover {
         flex-direction: column;
         height: auto;
     }
-
-    .left-side, .right-side {
+    .title{
+        font-size: 80px;
+        color: #fff;
+    }
+    .description{
+        font-size: 30px;
+        color: #fff;
+    }
+    .right-side {
         width: 100%;
     }
-
+    
     .left-side h1 {
         font-size: 2.5rem;
     }
@@ -253,6 +263,20 @@ button:hover {
 
     .right-side {
         padding: 20px;
+        height: 600px;
+        border-radius:  50px 50px 50px 50px;
+        background-color: #000000bb;
+    }
+
+    .left-side{
+        border-radius: 0 0 0 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/FondoCelulr.jpg);
+        background-size: 100%;
+        bottom: 0;
+        display: flex;
     }
 
     .image-container {
