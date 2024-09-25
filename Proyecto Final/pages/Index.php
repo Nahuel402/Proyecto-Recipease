@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION["IgualE"] = " ";
+$_SESSION["DistC"] = " ";
+$_SESSION["error"]= " ";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,38 +14,29 @@
     <link rel="stylesheet" href="../assets/css/globales.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/alerts.css">
-    <script defer src="../assets/js/Cod.js"></script>
+    
+
+   
     <title>RecipeEase</title>
 </head>
-<body>
-    <div class="d-flex justify-content-center align-items-center vh-100 text-center">
-        <div class="container BodyIndex">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="BodyIndex-title">RecipeEase</h1>
-                </div>
-                <div class="row">
-                    <div class="col-8 BodyIndex-div text-left align-items-center">
-                        <p class="BodyIndex-div-description">
-                            Bienvenido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar.
-                        </p>
-                        <p class="BodyIndex-div-description2">
-                            ¡Haz clic en el botón de abajo para empezar!
-                        </p>
-                    </div>
-                    
-                </div>
-                <div class="button-container ">
-                    <div class="col-6 col-md-6 text-center">
-                        <a href="acceder.php">
-                            <button class=" left-btn " onclick="Login()">Ingresar</button>
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-6 text-center">
-                        <a href="Registrarse.php">
-                            <button class=" right-btn " onclick="Registrar()">Registro</button>
-                        </a>
-                    </div>
+<body class="body">
+    <div class="container-index">
+        <!-- Left Section -->
+        <div class="left-side">
+        </div>
+        <!-- Right Section -->
+        <div class="right-side">
+            <div class="content">
+                <h1 class="title">RecipeEase</h1>
+                <p class="description">Bienvenido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar.</p>
+                <p class="sub-description">¡Haz clic en el botón de abajo para empezar!</p>
+                <div class="button-container">
+                    <a href="acceder.php">
+                        <button class=" left-btn " onclick="Login()">Ingresar</button>
+                    </a>
+                    <a href="Registrarse.php">
+                        <button class=" right-btn " onclick="Registrar()">Registro</button>
+                    </a>
                 </div>
             </div>
         </div>

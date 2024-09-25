@@ -22,7 +22,7 @@ if (empty($imagen)) {
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary header">
   <div class="container-fluid">
-    <a class="navbar-brand" href="Index.php">
+    <a class="navbar-brand" href="">
       <img src="https://images.vexels.com/media/users/3/235848/isolated/preview/4b62529b242dcef2dbc6719899ecdd6e-chefs-kitchen-hat.png" alt="Carrito" width="40" height="40">
       RecipeEase
     </a>
