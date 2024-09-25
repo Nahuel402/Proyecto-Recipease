@@ -1,12 +1,8 @@
 <?php
-$Direc = "";
 
-if (isset($_SESSION["IdUsuario"])){
-  $Direc = "ChatBot.php";
-}else{
-  $Direc = "Index.php";
-}
+$role = isset($_SESSION["role"]) ? $_SESSION["role"] : 'user';  // Establecer el rol por defecto
 
+// El resto de tu código del header
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary header">
   <div class="container-fluid">
@@ -38,5 +34,4 @@ if (isset($_SESSION["IdUsuario"])){
       </div>
       
     </div>
-  </div>
 </nav>

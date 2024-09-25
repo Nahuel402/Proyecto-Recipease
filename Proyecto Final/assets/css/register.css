@@ -1,0 +1,73 @@
+      /* Estilos generales */
+      body {
+        background-color: #FDEEDC; /* Fondo claro */
+        color: #000; /* Texto negro */
+    }
+
+    /* Estilos para el contenedor */
+    .container {
+        background-color: #F1A661; /* Fondo naranja */
+        border: 2px solid #000; /* Borde negro */
+        padding: 20px; /* Espaciado general */
+        border-radius: 15px; /* Bordes redondeados */
+    }
+
+    .form-control {
+        background-color: #FFFFFF; /* Fondo blanco para campos */
+        color: #000; /* Texto negro */
+        border-color: #000; /* Borde negro */
+    }
+
+    .form-control::placeholder {
+        color: #666; /* Color de placeholder gris */
+    }
+
+    .btn {
+        background-color: #000; /* Botón negro */
+        color: #FDEEDC; /* Texto blanco */
+        border: 2px solid #F1A661; /* Borde naranja */
+    }
+
+    .btn:hover {
+        background-color: #F1A661; /* Cambia a naranja al hover */
+        color: #000; /* Texto negro al hover */
+        border: 2px solid #000; /* Borde negro al hover */
+    }
+
+    .text-center a {
+        color: #000; /* Texto negro para el enlace */
+        text-decoration: none;
+    }
+
+    .text-center a:hover {
+        color: #F1A661; /* Texto naranja al pasar el ratón */
+    }
+
+    /* Media Queries para Responsividad */
+    @media (max-width: 575.98px) {
+        .container {
+            padding: 10px; /* Menos espaciado en pantallas muy pequeñas */
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .container {
+            border-radius: 20px; /* Bordes ligeramente más redondeados */
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .container {
+            border-radius: 25px; /* Bordes más redondeados */
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            border-radius: 30px; /* Bordes aún más redondeados en pantallas grandes */
+        }
+    }
+
+    .error {
+        color: red; /* Color para mensajes de error */
+    }
