@@ -29,7 +29,7 @@ async function FetchOpenAIResponse() {
             },
             body: JSON.stringify({
                 model: 'gpt-4',
-                messages: [{ role: 'user', content: `${context} Aquí está la consulta del usuario: ${userPrompt}. ${context2}` }]
+                messages: [{ role: 'user', content: `${context} Aquí está la consulta del usuario: ${userPrompt}` }]
             })
         });
 

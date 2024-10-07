@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_array($query)) {
     ?>
     <div class="container-fluid vh-100 p-5">
     <div class="row">
-        <div class="col-12"><br></div>
+        <div class="col-12 p-4"></div>
     </div>
         <div class="row">
             <div class="col-3 seccion-historial">

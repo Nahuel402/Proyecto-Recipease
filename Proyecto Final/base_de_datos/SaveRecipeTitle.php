@@ -1,32 +1,48 @@
 <?php
-session_start(); // Inicia la sesión
-
+session_start(); 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "recipeease";
 
-// Crear la conexión
+// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar la conexión
+// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-if (isset($_POST['title'])) {
+// Verificar si los datos POST están presentes
+if (isset($_POST['title']) && isset($_POST['instructions']) && isset($_POST['ingredients'])) {
     $title = $conn->real_escape_string($_POST['title']);
-    $instructions = isset($_POST['instructions']) ? $conn->real_escape_string($_POST['instructions']) : '';
-    $ingredients = isset($_POST['ingredients']) ? $conn->real_escape_string($_POST['ingredients']) : '';
+    $instructions = $conn->real_escape_string($_POST['instructions']);
+    $ingredients = $conn->real_escape_string($_POST['ingredients']);
 
-    // Verificar si el ID del usuario está disponible
-    if (isset($_SESSION['IdUsuario'])) {}
-    else if (isset($_POST['instructions'])) { // Aquí faltaba el cierre del paréntesis
-        $userId = $conn->real_escape_string($_SESSION['IdUsuario']);
-        // Preparar la consulta SQL
-        $sql = "INSERT INTO `recetas recientes` (NomReceta, Id_usuario, Receta, Ingredientes) VALUES ('$title', '$userId', '$instructions', '$ingredients')";
-    }}
+    // Validar que la lista de ingredientes no esté vacía
+    if (empty($ingredients)) {
+        echo "No se puede guardar la receta porque no contiene ingredientes.";
+    } else {
+        // Verificar si el usuario ha iniciado sesión
+        if (isset($_SESSION['IdUsuario'])) {
+            $userId = $conn->real_escape_string($_SESSION['IdUsuario']);
+            
+            // Preparar y ejecutar la consulta de inserción
+            $sql = "INSERT INTO `recetas recientes` (NomReceta, Id_usuario, Receta, Ingredientes) 
+                    VALUES ('$title', '$userId', '$instructions', '$ingredients')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "Receta guardada correctamente.";
+            } else {
+                echo "Error al guardar la receta: " . $conn->error;
+            }
+        } else {
+            echo "Usuario no identificado.";
+        }
+    }
+} else {
+    echo "Datos incompletos.";
+}
 
 $conn->close();
 ?>
-
