@@ -10,6 +10,7 @@ if ($conn->connect_error) {
 }
 $imagen = "";
 $nombre = "";
+$fecha = "";
 $query = mysqli_query($conn, "SELECT Nombre, Imagen FROM usuarios WHERE ID = " . $_SESSION["IdUsuario"] . "") or die(mysqli_error($conn));
 while ($row = mysqli_fetch_array($query)) {
     $imagen = $row["Imagen"];
@@ -55,11 +56,10 @@ while ($row = mysqli_fetch_array($query)) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $idReceta = $row['Id'];
                         $nombreReceta = $row['NomReceta'];
-                       
-                      
+                        $fecha = $row['fecha'];
                         echo "<tr>
                                 <td>$nombreReceta</td>
-                                <td>choquito hermoso</td>
+                                <td>$fecha</td>
                                 <td>
                                     <a href='receta_detalle.php?id=$idReceta' class='btn btn-custom'>Ver Detalles</a>
                                 </td>

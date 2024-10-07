@@ -29,7 +29,7 @@ $role = isset($_SESSION["role"]) ? $_SESSION["role"] : 'user';  // Establecer el
       </ul>
       <div class="p-3">
       <?php 
-          echo "<img class='rounded-circle me-2' width='50' height='50' id='filtrado'src='$imagen'>";
+          echo "<img class='rounded-circle me-2' width='50' height='50'src='$imagen'>";
       ?>
       </div>
       
