@@ -48,7 +48,7 @@ while ($row = mysqli_fetch_array($query)) {
             <tbody>
                 <?php
                 // Consulta para obtener las recetas recientes
-                $sql = "SELECT NomReceta, Id FROM `recetas recientes` WHERE Id_usuario = " . $_SESSION["IdUsuario"] . " ORDER BY Id DESC";
+                $sql = "SELECT NomReceta, Id, fecha FROM `recetas recientes` WHERE Id_usuario = " . $_SESSION["IdUsuario"] . " ORDER BY Id DESC";
                 
                 $result = mysqli_query($conn, $sql);
 

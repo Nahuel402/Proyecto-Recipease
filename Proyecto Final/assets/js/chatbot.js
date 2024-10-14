@@ -1,3 +1,8 @@
+
+function click(){
+
+    document.getElementById("favorite").src = "../assets/images/heart-fill.svg";
+}
 async function FetchOpenAIResponse() {
     const apiKey = '';
     const url = 'https://api.openai.com/v1/chat/completions';

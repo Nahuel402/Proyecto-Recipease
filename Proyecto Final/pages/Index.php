@@ -23,14 +23,18 @@
                 <h1 class="title">RecipeEase</h1>
                 <p class="description">Bienvenido a RecipeEase, el chatbot de cocina para facilitarte a la hora de cocinar.</p>
                 <p class="sub-description">¡Haz clic en el botón de abajo para empezar!</p>
+                
                 <div class="button-container">
                     <a href="acceder.php">
-                        <button class=" left-btn " onclick="Login()">Ingresar</button>
+                        <button class=" left-btn ">Ingresar</button>
                     </a>
                     <a href="Registrarse.php">
-                        <button class=" right-btn " onclick="Registrar()">Registro</button>
+                        <button class=" right-btn ">Registro</button>
                     </a>
                 </div>
+                <a href="ChatBot.php">
+                        <button class=" center-btn ">Ingresar como invitado</button>
+                    </a>
             </div>
         </div>
     </div>

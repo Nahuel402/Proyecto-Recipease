@@ -8,13 +8,22 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$noingreso= "";
 $imagen = "";
 $nombre = "";
-$query = mysqli_query($conn, "SELECT Nombre, Imagen FROM usuarios WHERE ID = " . $_SESSION["IdUsuario"] . "") or die(mysqli_error($conn));
-while ($row = mysqli_fetch_array($query)) {
-    $imagen = $row["Imagen"];
-    $nombre = $row["Nombre"];
+if (isset($_SESSION["IdUsuario"])){
+    $query = mysqli_query($conn, "SELECT Nombre, Imagen FROM usuarios WHERE ID = " . $_SESSION["IdUsuario"] . "") or die(mysqli_error($conn));
+    while ($row = mysqli_fetch_array($query)) {
+        $imagen = $row["Imagen"];
+        $nombre = $row["Nombre"];
+    }
+}else{
+    $noingreso="<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                                    <strong>Te has ingresado como invitado!</strong> Create una cuenta para disfrutár de todos nuestros servicios y guardar tus recetas favoritas <br><a href='Registrarse.php' class='A-Registro'>Registrate</a></a>
+                                </div>";
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +34,13 @@ while ($row = mysqli_fetch_array($query)) {
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/globales.css">
     <link rel="stylesheet" href="../assets/css/estiloschates.css">
+        <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
     <title>RecipeEase</title>
 
 </head>
@@ -41,26 +57,35 @@ while ($row = mysqli_fetch_array($query)) {
             <div class="col-3 seccion-historial">
                 <h4>Historial de Recetas</h4>
                 <ul>
-                    
                 <?php
-                $sql = "SELECT NomReceta, Id FROM `recetas recientes` WHERE Id_usuario = " . $_SESSION["IdUsuario"] . " ORDER BY Id DESC";
+                if (isset($_SESSION["IdUsuario"])) {
+                    $sql = "SELECT NomReceta, Id FROM `recetas recientes` WHERE Id_usuario = " . $_SESSION["IdUsuario"] . " ORDER BY Id DESC";
+                    $result = mysqli_query($conn, $sql);
 
-
-$result = mysqli_query($conn, $sql);
-
-if ($result && mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $nombreReceta = $row['NomReceta'];
-        $idReceta = $row['Id'];
-        echo "<li><a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a></li>";
-    }
-} else {
-    echo "<li>No hay recetas recientes.</li>";
-}
-?>
-                 <li><a href="historial.php">Ver todas las recetas</li></a>
-                </ul>
-               
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $nombreReceta = $row['NomReceta'];
+                            $idReceta = $row['Id'];
+                            echo "<li class='Recetas'><a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
+                            <div class='RecetasFav'>
+                                <div class='container-buttons-card'>
+                                    <button class='favorite' onclick = 'Click()'>
+                                        <img class='favorite-btn' src='../assets/images/heart.svg' id='favorite'> </img>
+								    </button>
+                                </div>
+                            </div>
+                        </li>";
+                        }
+                    } else {
+                        echo "<li>No hay recetas recientes.</li>";
+                    }
+                        echo"<li><a href='historial.php'>Ver todas las recetas</a></li>
+                    </ul>";
+                }else{
+                    echo $noingreso;
+                }
+                ?>
+                 
             </div>
 
             <div class="col-9">

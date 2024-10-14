@@ -62,7 +62,7 @@ if(isset($ID)){
                 while ($row = mysqli_fetch_array($query)){
                     $_SESSION["IdUsuario"] = $row["ID"];
                     $_SESSION["Registrado"]= 1 ;
-                    header("Location:../pages/acceder.php");
+                    header("Location:../pages/ChatBot.php");
                 } 
             }else {
                 
