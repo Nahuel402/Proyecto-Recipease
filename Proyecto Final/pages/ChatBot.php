@@ -19,7 +19,7 @@ if (isset($_SESSION["IdUsuario"])){
     }
 }else{
     $noingreso="<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                                    <strong>Te has ingresado como invitado!</strong> Create una cuenta para disfrutár de todos nuestros servicios y guardar tus recetas favoritas <br><a href='Registrarse.php' class='A-Registro'>Registrate</a></a>
+                                    <strong>Te has ingresado como invitado!</strong> Create una cuenta para disfrutár de todos nuestros servicios y guardar tus recetas favoritas <br><a href='Registrarse.php' class='A-Registro'>Registrate</a>/<a href='acceder.php' class='A-Registro'>Ingresate</a>
                                 </div>";
 }
 
@@ -33,14 +33,8 @@ if (isset($_SESSION["IdUsuario"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/globales.css">
-    <link rel="stylesheet" href="../assets/css/estiloschates.css">
-        <link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
+    <link rel="stylesheet" href="../assets/css/estiloschatees.css">
+       
     <title>RecipeEase</title>
 
 </head>
@@ -49,7 +43,7 @@ if (isset($_SESSION["IdUsuario"])){
 <?php 
     include "../includes/header.php";
     ?>
-    <div class="container-fluid vh-100 p-5">
+    <div class="container-fluid vh-100 p-5 ">
     <div class="row">
         <div class="col-12 p-4"></div>
     </div>
@@ -66,20 +60,27 @@ if (isset($_SESSION["IdUsuario"])){
                         while ($row = mysqli_fetch_assoc($result)) {
                             $nombreReceta = $row['NomReceta'];
                             $idReceta = $row['Id'];
-                            echo "<li class='Recetas'><a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
-                            <div class='RecetasFav'>
-                                <div class='container-buttons-card'>
-                                    <button class='favorite' onclick = 'Click()'>
-                                        <img class='favorite-btn' src='../assets/images/heart.svg' id='favorite'> </img>
-								    </button>
-                                </div>
-                            </div>
-                        </li>";
+                            echo "<li class='Recetas'>
+                    <a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
+                    <div class='RecetasFav'>
+                        <div class='container-buttons-card d-flex justify-content-end'>
+                            <form action='../base_de_datos/saveFavorite.php' method='POST'>
+                                <input type='hidden' name='id' value='$idReceta'>
+                                <input type='hidden' name='title' value='$nombreReceta'>
+                                <input type='hidden' name='instructions' value='Instrucciones de ejemplo'>
+                                <input type='hidden' name='ingredients' value='Ingredientes de ejemplo'>
+                                <button type='submit' class='favorite'>
+                                    <img class='favorite-btn' src='../assets/images/heart.svg' alt='Heart'>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                  </li>";
                         }
                     } else {
                         echo "<li>No hay recetas recientes.</li>";
                     }
-                        echo"<li><a href='historial.php'>Ver todas las recetas</a></li>
+                        echo"<li class='Historial btn btn-primary' ><a href='historial.php'>Ver todas las recetas</a></li>
                     </ul>";
                 }else{
                     echo $noingreso;
@@ -88,10 +89,10 @@ if (isset($_SESSION["IdUsuario"])){
                  
             </div>
 
-            <div class="col-9">
+            <div class="col-9  ">
                 <div id="user-prompt-display" class="response-message"></div>
                 <div id="chat-messages" class="flex-grow-1 p-3">
-                    <div id="response-text" class="response-text mensaje-respuesta">
+                    <div id="response-text" class="response-text ">
                         <p id="title" class="titulo-respuesta"></p>
                         <div class="row">
                             <div class="col-6">

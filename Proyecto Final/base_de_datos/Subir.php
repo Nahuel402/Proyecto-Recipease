@@ -64,8 +64,7 @@ if(isset($ID)){
                     $_SESSION["Registrado"]= 1 ;
                     header("Location:../pages/ChatBot.php");
                 } 
-            }else {
-                
+            }else{
             header("Location:../pages/Registrarse.php");
             }
         }
