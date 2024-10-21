@@ -52,9 +52,17 @@ body {
 	border-radius: 50%;
 	font-size: 18px;
 }
-.favorite-btn{
-
+.favorite-btn {
+    width: 24px; /* Tamaño del corazón */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Animación suave */
 }
+
+.favorite-btn.red {
+    transform: scale(1.2); /* Aumenta el tamaño ligeramente */
+    filter: none; /* Elimina cualquier ajuste de color */
+}
+
+
 .entrada-chat input {
     width: 100%; 
     border-radius: 8px; 

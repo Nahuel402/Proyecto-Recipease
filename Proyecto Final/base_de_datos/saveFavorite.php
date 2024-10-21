@@ -18,7 +18,7 @@ if (isset($_SESSION['IdUsuario']) && isset($_POST['id'])) {
     $ingredientes = $_POST['ingredients'];
 
     // Verifica si la receta ya está en favoritos
-    $checkQuery = "SELECT * FROM receta_favorita WHERE Id_usuario = $idUsuario AND Id_receta = $idReceta";
+    $checkQuery = "SELECT * FROM `receta favorita` WHERE Id_usuario = $idUsuario AND Id_receta = $idReceta";
     $result = mysqli_query($conn, $checkQuery);
 
     if (!$result) {
@@ -28,7 +28,7 @@ if (isset($_SESSION['IdUsuario']) && isset($_POST['id'])) {
 
     if (mysqli_num_rows($result) > 0) {
         // Si ya existe, elimina la receta de favoritos
-        $deleteQuery = "DELETE FROM receta_favorita WHERE Id_usuario = $idUsuario AND Id_receta = $idReceta";
+        $deleteQuery = "DELETE FROM `receta favorita` WHERE Id_usuario = $idUsuario AND Id_receta = $idReceta";
         if (mysqli_query($conn, $deleteQuery)) {
             echo "Receta eliminada de favoritos.";
             header("Location:../pages/ChatBot.php");
@@ -38,7 +38,7 @@ if (isset($_SESSION['IdUsuario']) && isset($_POST['id'])) {
         }
     } else {
         // Si no existe, añade la receta a favoritos
-        $insertQuery = "INSERT INTO receta_favorita (Id_usuario, Id_receta, NomReceta, Receta, Ingredientes) 
+        $insertQuery = "INSERT INTO `receta favorita` (Id_usuario, Id_receta, NomReceta, Receta, Ingredientes) 
                         VALUES ($idUsuario, $idReceta, '$nombreReceta', '$instrucciones', '$ingredientes')";
         if (mysqli_query($conn, $insertQuery)) {
             echo "Receta añadida a favoritos.";
