@@ -18,7 +18,7 @@ if (isset($_SESSION['error_message'])) {
     <link rel="stylesheet" href="../assets/css/globales.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/alerts.css">
-    <link rel="stylesheet" href="../assets/css/loginn.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
     <title>RecipeEase</title>
     
 </head>

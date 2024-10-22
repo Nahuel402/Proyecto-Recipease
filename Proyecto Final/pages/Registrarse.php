@@ -9,20 +9,21 @@ $_SESSION["error"] = " ";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/registerr.css">
+    <link rel="stylesheet" href="../assets/css/registere.css">
     <link rel="stylesheet" href="../assets/css/globales.css">
-    <link rel="stylesheet" href="../assets/css/headerr.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/alerts.css">
     <script defer src="../assets/js/Cod.js"></script>
     <script defer src="../assets/js/Imagen.js"></script>
     <title>RecipeEase</title>
 </head>
 <body>
+
     <?php 
         include "../includes/header-registro-login.php";
     ?>
-    <div class="col-lg-12 d-flex justify-content-center align-items-center vh-100">
-        <div class="container text-light p-4 rounded shadow" style="max-width: 400px;">
+    <div class="col-lg-12 d-flex  align-items-center vh-100">
+        <div class="container text-light rounded shadow" >
             <div class="text-center mb-4">
                 <?php  
                     if (isset($_SESSION["IgualE"])){

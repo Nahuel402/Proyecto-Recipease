@@ -1,0 +1,131 @@
+/* Fondo general */
+body {
+    background-color: #f4f4f4; /* Gris claro y cálido */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333333; /* Gris oscuro cálido para el texto */
+}
+.header {
+    position: fixed;
+    top: 0; /* Pegado a la parte superior */
+    width: 100%; /* Ancho completo */
+    background-color: #949494; /* Color de fondo */
+    color: white; /* Color del texto */
+    transition: top 0.3s; /* Suaviza el movimiento del header */
+    z-index: 1000; /* Asegúrate de que esté encima del contenido */
+}
+
+.container {
+    background-color: #3b3b3b; /* Gris oscuro más cálido */
+    border: 1px solid #aaa; /* Borde gris más claro */
+    padding: 60px 20px 20px; /* Aumentar padding-top a 60px */
+    margin-top: 40px; /* Añadir espacio encima del contenedor */
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 40px auto; /* Alinear al centro con margen superior */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+}
+
+/* Adaptación a pantallas más grandes */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+/* Títulos y descripciones */
+.title {
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    font-size: 2em; /* Aumentar tamaño de texto para título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.description {
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    font-size: 1.2em; /* Aumentar tamaño de texto para descripción */
+}
+
+/* Formularios */
+.form-control {
+    background-color: #e0e0e0; /* Fondo más claro para formularios */
+    color: #333333; /* Texto gris oscuro */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Aumentar tamaño de texto */
+}
+.form-control::placeholder {
+    color: #666666; /* Placeholder gris claro */
+}
+
+/* Botones principales */
+.butR {
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    margin: 10px auto;
+    background-color: #264653; /* Azul petróleo cálido */
+    color: #f0f0f0; /* Texto blanco sucio */
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2em; /* Aumentar tamaño de texto */
+}
+.butR:hover {
+    background-color: #2a9d8f; /* Verde agua cálido */
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+/* Botones secundarios */
+.btn {
+    background-color: #264653; /* Azul petróleo cálido */
+    color: #f0f0f0; /* Texto blanco sucio */
+    border: 2px solid #aaa; /* Borde gris más claro */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2em; /* Aumentar tamaño de texto */
+}
+.btn:hover {
+    background-color: #2a9d8f; /* Verde agua cálido */
+    color: #ffffff; /* Texto blanco */
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+/* Links */
+.Redir, .text-center a {
+    color: #0969da; /* Azul clásico para el enlace */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.2em; /* Aumentar tamaño de texto */
+}
+.text-center a:hover {
+    color: #1e53ff; /* Azul más brillante al pasar el ratón */
+}
+
+/* Imágenes */
+.text-center img {
+    max-width: 100%;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid #4c4c4c; /* Borde gris oscuro */
+}
+@media (min-width: 768px) {
+    .text-center img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Listas */
+.Recetas {
+    background-color: #3b3b3b; /* Gris oscuro más cálido */
+    border-bottom: 1px solid #aaa; /* Borde gris más claro */
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+.Recetas:hover {
+    background-color: #666666; /* Gris más claro al pasar el ratón */
+}

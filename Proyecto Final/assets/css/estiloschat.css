@@ -1,0 +1,192 @@
+/* Fondo general */
+body {
+    background-color: #e5e5e5; /* Fondo gris claro */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+}
+
+/* Estilo del contenedor de entrada del chat */
+.entrada-chat {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    width: 72%;
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+}
+
+/* Estilos para el nombre de usuario */
+.nombreU:focus {
+    color: #ffffff;
+}
+
+/* Enlace de registro */
+.A-Registro {
+    color: #1a3e59; /* Azul oscuro */
+    text-decoration: none;
+}
+.A-Registro:hover {
+    color: #80b3b3; /* Azul claro al pasar el ratón */
+}
+
+/* Estilos de recetas */
+.Recetas {
+    display: flex;
+    min-width: 100%;
+}
+
+.favorite-btn {
+    width: 24px; /* Tamaño del corazón */
+    transition: transform 0.7s ease-in-out, filter 0.3s ease-in-out; /* Animación suave */
+}
+
+.favorite-btn.red {
+    transform: scale(1.2); /* Aumenta el tamaño ligeramente */
+    filter: none; /* Elimina cualquier ajuste de color */
+}
+
+.RecetasFav {
+    flex: 1;
+    padding-left: 10px;
+    align-self: flex-end;
+}
+
+/* Estilos para los botones */
+.container-buttons-card {
+    display: flex;
+    gap: 20px;
+}
+.container-buttons-card button {
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px #00000025;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+/* Estilos de entrada de chat */
+.entrada-chat input {
+    width: 100%; 
+    border-radius: 8px; 
+    border: 1px solid #ccc;
+    padding: 10px; 
+}
+
+/* Botones de la entrada del chat */
+.entrada-chat button {
+    background-color: #264653; /* Azul petróleo cálido */
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+}
+
+/* Hover del botón */
+.entrada-chat button:hover {
+    background-color: #2a9d8f; /* Verde agua cálido */
+}
+
+/* Estilos de respuesta del chatbot */
+.response-text {
+    width: auto;
+    height: 100%;
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    padding: 20px; 
+}
+
+.mensaje-respuesta {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 10px 0; 
+}
+
+/* Títulos de respuesta */
+.titulo-respuesta {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #000000bb; 
+    margin-bottom: 10px; 
+    text-align: center; 
+}
+
+/* Sección de respuesta */
+.seccion-respuesta {
+    margin-bottom: 20px; 
+}
+
+.seccion-respuesta h3 {
+    background-color: #1a3e59; /* Azul oscuro */
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+/* Listas en la sección de respuesta */
+.seccion-respuesta ul,
+.seccion-respuesta ol {
+    padding-left: 20px; 
+    margin: 10px 0; 
+}
+
+.seccion-respuesta ul li,
+.seccion-respuesta ol li {
+    margin-bottom: 5px; 
+}
+
+/* Sección del historial de recetas */
+.seccion-historial {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    padding: 20px; 
+    height: 90vh; 
+    overflow-y: auto; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.seccion-historial h4 {
+    background-color: #1a3e59; /* Azul oscuro */
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+}
+
+/* Listas en el historial */
+.seccion-historial ul {
+    list-style: none; 
+    padding-left: 0; 
+}
+
+.seccion-historial ul li {
+    margin-bottom: 15px; 
+}
+
+.seccion-historial ul li a {
+    text-decoration: none; 
+    color: #000000; 
+}
+
+.seccion-historial ul li a:hover {
+    color: #0000005d; 
+}
+
+/* Estilo para la sección del chat */
+#chat-messages {
+    height: calc(90vh - 150px); 
+    overflow-y: auto; 
+    margin-bottom: 15px; 
+}

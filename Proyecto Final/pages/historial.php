@@ -60,13 +60,13 @@ while ($row = mysqli_fetch_array($query)) {
                         echo "<tr>
                                 <td>$nombreReceta</td>
                                 <td>$fecha</td>
-                                <td>
+                                <td class='text-center'>
                                     <a href='receta_detalle.php?id=$idReceta' class='btn btn-custom'>Ver Detalles</a>
                                 </td>
                               </tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='3' class='text-center'>No hay recetas recientes.</td></tr>";
+                    echo "<tr><td colspan='3' class='text-center'>No se han ingresado recetas recientes.</td></tr>";
                 }
                 ?>
             </tbody>
