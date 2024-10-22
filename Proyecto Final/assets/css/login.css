@@ -26,13 +26,6 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más suave */
 }
 
-/* Adaptación a pantallas más grandes */
-@media (min-width: 768px) {
-    .container {
-        max-width: 600px;
-    }
-}
-
 /* Títulos y descripciones */
 .title {
     color: #ffffff; /* Texto blanco */
@@ -112,12 +105,55 @@ body {
     border-radius: 10px;
     border: 2px solid #4c4c4c; /* Borde gris oscuro */
 }
-@media (min-width: 768px) {
-    .text-center img {
-        width: 80px;
-        height: 80px;
+@media (max-width: 575.98px) {
+    .container {
+        padding: 10px; 
+        margin-top: 100px; /* Elimina el margen superior para que ocupe toda la pantalla */
+        width: 100%; /* Ancho completo */
+        height: 100%; /* Altura completa */
+        border-radius: 0; /* Opcional: elimina el redondeo de esquinas */
+    }
+    
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+        width: 100%; /* Ancho completo */
+        height: 100%; /* Altura completa */
+        border-radius: 0; /* Opcional: elimina el redondeo de esquinas */
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        border-radius: 25px; 
+        max-width: 80%;
     }
 }
+
+@media (min-width: 1024px) {
+    .container {
+        border-radius: 30px; 
+        max-width: 60%;
+        margin-top: 16%;
+    }
+}
+
+@media (min-width: 1366px) {
+    .container {
+        margin-top: 10%;
+        border-radius: 30px; 
+        max-width: 35%;
+    }
+}
+@media (min-width: 1440px) {
+    .container {
+        border-radius: 30px; 
+        max-width: 25%;
+    }
+}
+
 
 /* Listas */
 .Recetas {

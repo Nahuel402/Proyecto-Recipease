@@ -70,22 +70,28 @@ if (isset($_SESSION["IdUsuario"])){
                         $claseFavorito = $esFavorito ? 'red' : '';  // Clase 'red' si es favorito
 
                         echo "<li class='Recetas'>
-                                <a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
-                                <div class='RecetasFav'>
-                                    <div class='container-buttons-card d-flex justify-content-end'>
-                                        <form action='../base_de_datos/saveFavorite.php' method='POST'>
-                                            <input type='hidden' name='id' value='$idReceta'>
-                                            <input type='hidden' name='title' value='$nombreReceta'>
-                                            <input type='hidden' name='instructions' value='Instrucciones de ejemplo'>
-                                            <input type='hidden' name='ingredients' value='Ingredientes de ejemplo'>
-                                            <button class='favorite' onclick='toggleHeart(this)'>
-                                                <img class='favorite-btn $claseFavorito' src='$iconoCorazon' id='favorite-$idReceta' alt='Heart'>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </li>";
-                    }
+                        <a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
+                        <div class='RecetasFav'>
+                            <div class='container-buttons-card d-flex justify-content-end'>
+                                <form action='../base_de_datos/saveFavorite.php' method='POST'>
+                                    <input type='hidden' name='id' value='$idReceta'>
+                                    <input type='hidden' name='title' value='$nombreReceta'>
+                                    <input type='hidden' name='instructions' value='Instrucciones de ejemplo'>
+                                    <input type='hidden' name='ingredients' value='Ingredientes de ejemplo'>
+                                    <button class='favorite' onclick='toggleHeart(this)'>
+                                        <img class='favorite-btn $claseFavorito' src='$iconoCorazon' id='favorite-$idReceta' alt='Heart'>
+                                    </button>
+                                </form>
+                                <form action='../base_de_datos/deleteRecipe.php' method='POST' style='margin-left: 10px;'>
+                                    <input type='hidden' name='id' value='$idReceta'>
+                                    <button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(\"¿Estás seguro de que deseas eliminar esta receta del historial?\")'>
+                                        <img src='../assets/images/cruz.jpg' alt='Borrar' style='width: 16px; height: 16px;'>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>";
+            }
                 } else {
                     echo "<li>No hay recetas recientes.</li>";
                 }

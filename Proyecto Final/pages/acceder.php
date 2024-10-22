@@ -29,6 +29,7 @@ if (isset($_SESSION['error_message'])) {
     <div class="col-lg-12 d-flex justify-content-center align-items-center vh-100">
         <div class="container text-dark p-4 rounded shadow">
             <div class="text-center mb-4">
+                <br>
                 <img id="filtrado" src="../assets/images/Looo.svg" width="80" height="80">
                 <h1 class="h3 mb-4 title">Iniciar sesión</h1>
             </div>
