@@ -53,7 +53,7 @@ if ($row = mysqli_fetch_array($query)) {
             </thead>
             <tbody id="resultados">
                 <?php
-                $sql = "SELECT r.Id, r.NomReceta, r.fecha, 
+                $sql = "SELECT r.Id, r.NomReceta,r.Receta, r.Ingredientes , r.fecha,
                                IF(rf.Id_receta IS NOT NULL, 1, 0) AS esFavorito
                         FROM `recetas recientes` r
                         LEFT JOIN `receta favorita` rf
@@ -66,8 +66,10 @@ if ($row = mysqli_fetch_array($query)) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $idReceta = $row['Id'];
                         $nombreReceta = $row['NomReceta'];
-                        $fecha = $row['fecha'];
                         $esFavorito = $row['esFavorito'];
+                        $ingredients = $row['Ingredientes'];
+                        $instructions = $row['Receta'];
+                        $fecha = $row['fecha'];
 
                         $iconoCorazon = $esFavorito ? '../assets/images/corazon.png' : '../assets/images/corazonvacio.png';
                         $claseFavorito = $esFavorito ? 'red' : '';
@@ -76,14 +78,15 @@ if ($row = mysqli_fetch_array($query)) {
                                 <td>$fecha</td>
                                 <td>
                                     <form action='../base_de_datos/saveFavorite.php' method='POST'>
-                                    <input type='hidden' name='id' value='$idReceta'>
-                                    <input type='hidden' name='title' value='$nombreReceta'>
-                                    <input type='hidden' name='instructions' value='Instrucciones de ejemplo'>
-                                    <input type='hidden' name='ingredients' value='Ingredientes de ejemplo'>
+                                                <input type='hidden' name='id' value='$idReceta'>
+                                                <input type='hidden' name='title' value='$nombreReceta'>
+                                                <input type='hidden' name='instructions' value='$instructions'>
+                                                <input type='hidden' name='ingredients' value='$ingredients'>
+                                                <input type='hidden' name='fecha' value='$fecha'>
                                     <button class='favorite'>
                                         <img class='favorite-btn $claseFavorito' src='$iconoCorazon' id='favorite-$idReceta' alt='Heart'>
                                     </button>
-                                </form>
+                                    </form>
                                 </td>
                                 <td class='text-center'>
                                     <a href='receta_detalle.php?id=$idReceta'>

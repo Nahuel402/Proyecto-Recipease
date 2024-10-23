@@ -6,12 +6,6 @@ body {
     background-color: #e5e5e5; 
 }
 
-header {
-    background-color: #133e5f; 
-    width: 100%;
-    padding: 20px 0; 
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -24,15 +18,25 @@ header {
     max-width: 1200px; 
 }
 
-.profile-container {
+.profile-container-right {
     border-radius: 15px; 
-    background-color: #3b3b3b; 
+    background-color: #8f8b8b; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
     padding: 20px;
     margin: 0 10px;
     flex: 1;
     transition: all 0.3s ease;
 }
+.profile-container-left {
+    border-radius: 15px; 
+    background-color: #b0afaf; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+    margin: 0 10px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
 
 .profile-img-preview {
     width: 28vh;

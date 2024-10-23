@@ -53,64 +53,68 @@ if (isset($_SESSION["IdUsuario"])){
                 <h4>Historial de Recetas</h4>
                 <ul>
                 <?php
-            if (isset($_SESSION["IdUsuario"])) {
-                $idUsuario = $_SESSION["IdUsuario"];
-                $sql = "SELECT r.Id, r.NomReceta, 
-                        (SELECT COUNT(*) FROM `receta favorita` rf WHERE rf.Id_usuario = $idUsuario AND rf.Id_receta = r.Id) AS esFavorito
-                        FROM `recetas recientes` r WHERE r.Id_usuario = $idUsuario ORDER BY r.Id DESC";
-                $result = mysqli_query($conn, $sql);
+                    if (isset($_SESSION["IdUsuario"])) {
+                        $idUsuario = $_SESSION["IdUsuario"];
+                        $sql = "SELECT r.Id, r.NomReceta,r.Receta, r.Ingredientes , r.fecha,
+                                (SELECT COUNT(*) FROM `receta favorita` rf WHERE rf.Id_usuario = $idUsuario AND rf.Id_receta = r.Id) AS esFavorito
+                                FROM `recetas recientes` r WHERE r.Id_usuario = $idUsuario ORDER BY r.Id DESC";
+                        $result = mysqli_query($conn, $sql);
+                        $i="";
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                if ($i<=11) {
+                                    $i++;
+                                    $nombreReceta = $row['NomReceta'];
+                                    $idReceta = $row['Id'];
+                                    $esFavorito = $row['esFavorito'];
+                                    $ingredients = $row['Ingredientes'];
+                                    $instructions = $row['Receta'];
+                                    $fecha = $row['fecha'];
 
-                if ($result && mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $nombreReceta = $row['NomReceta'];
-                        $idReceta = $row['Id'];
-                        $esFavorito = $row['esFavorito'];
-
-                        $iconoCorazon = $esFavorito ? '../assets/images/corazon.png' : '../assets/images/corazonvacio.png';
-                        $claseFavorito = $esFavorito ? 'red' : '';
-                        echo "<li class='Recetas'>
-                        <a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
-                        <div class='RecetasFav'>
-                            <div class='container-buttons-card d-flex justify-content-end'>
-                                <form action='../base_de_datos/saveFavorite.php' method='POST'>
-                                    <input type='hidden' name='id' value='$idReceta'>
-                                    <input type='hidden' name='title' value='$nombreReceta'>
-                                    <input type='hidden' name='instructions' value='Instrucciones de ejemplo'>
-                                    <input type='hidden' name='ingredients' value='Ingredientes de ejemplo'>
-                                    <button class='favorite' onclick='toggleHeart(this)'>
-                                        <img class='favorite-btn $claseFavorito' src='$iconoCorazon' id='favorite-$idReceta' alt='Heart'>
-                                    </button>
-                                </form>
-                                <form action='../base_de_datos/deleteRecipe.php' method='POST' style='margin-left: 10px;'>
-                                    <input type='hidden' name='id' value='$idReceta'>
-                                    <button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(\"¿Estás seguro de que deseas eliminar esta receta del historial?\")'>
-                                        <img src='../assets/images/cruz.jpg' alt='Borrar' style='width: 16px; height: 16px;'>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </li>";
-            }
-                } else {
-                    echo "<li>No hay recetas recientes.</li>";
-                }
-
-                echo "<li class='Historial btn btn-primary'><a href='historial.php'>Ver todas las recetas</a></li>";
-            } else {
-                echo $noingreso;
-            }
-            ?>
-                 
+                                    $iconoCorazon = $esFavorito ? '../assets/images/corazon.png' : '../assets/images/corazonvacio.png';
+                                    $claseFavorito = $esFavorito ? 'red' : '';
+                                    echo "<li class='Recetas'>
+                                    <a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
+                                    <div class='RecetasFav'>
+                                        <div class='container-buttons-card d-flex justify-content-end'>
+                                            <form action='../base_de_datos/saveFavorite.php' method='POST'>
+                                                <input type='hidden' name='id' value='$idReceta'>
+                                                <input type='hidden' name='title' value='$nombreReceta'>
+                                                <input type='hidden' name='instructions' value='$instructions'>
+                                                <input type='hidden' name='ingredients' value='$ingredients'>
+                                                <input type='hidden' name='fecha' value='$fecha'>
+                                                <button class='favorite' onclick='toggleHeart(this)'>
+                                                    <img class='favorite-btn $claseFavorito' src='$iconoCorazon' id='favorite-$idReceta' alt='Heart'>
+                                                </button>
+                                            </form>
+                                            <form action='../base_de_datos/deleteRecipe.php' method='POST' style='margin-left: 10px;'>
+                                                <input type='hidden' name='id' value='$idReceta'>
+                                                <button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(\"¿Estás seguro de que deseas eliminar esta receta del historial?\")'>
+                                                    <img src='../assets/images/cruz.jpg' alt='Borrar' style='width: 16px; height: 16px;'>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>";
+                                }   
+                            }
+                        } else {
+                            echo "<li>No hay recetas recientes.</li>";
+                        }
+                        echo "<li ><a href='historial.php' class='Historial btn'>Ver todas las recetas</a></li>";
+                    } else {
+                        echo $noingreso;
+                    }
+                ?>    
             </div>
-
             <div class="col-9">
                 <div id="user-prompt-display" class="response-message"></div>
                 <div id="chat-messages" class="flex-grow-1 p-3">
                     <div id="response-text" class="response-text ">
                     <div id="loading" class="loading" style="display: none; text-align: center;">
-    <img src="../assets/images/loading.gif" alt="Cargando..." style="width: 100px; height: 100px;">
-                                    <p>Cargando...</p>
-                                </div>
+                        <img src="../assets/images/loading.gif" alt="Cargando..." style="width: 100px; height: 100px;">
+                        <p>Cargando...</p>
+                    </div>
                         <p id="title" class="titulo-respuesta"></p>
                         <div class="row">
                             <div class="col-6">
@@ -120,13 +124,16 @@ if (isset($_SESSION["IdUsuario"])){
                                 <label id="instructions"></label>
                             </div>
                         </div>
-                        <div id="optional-ingredients" class="mensaje-respuesta"></div>
+                        <div class="row">
+                            <div id="optional-ingredients" class="mensaje-respuesta col-6"></div>
+                            <div id="boton-next" class="col-6 mensaje-next"></div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="entrada-chat">
                     <input type="text" id="userPrompt" class="form-control me-3" placeholder="Escribe tu mensaje aquí..." required>
-                    <button onclick="FetchOpenAIResponse()" type="submit" class="btn">Enviar</button>
+                    <button onclick="FetchOpenAIResponse(Prompt)" type="submit" class="btn">Enviar</button>
                 </div>
             </div>
         </div>

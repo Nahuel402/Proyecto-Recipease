@@ -127,6 +127,12 @@ header{
     margin: 10px 0; 
     text-align: center;
 }
+.mensaje-next{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 .div-next{
     display: flex;
     justify-items: center;
@@ -138,12 +144,10 @@ header{
 }
 .btn-otra{
     background-color: rgba(0, 0, 0, 0.598);
-    position: fixed;
-    max-height: 50px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 0;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 50px;
     transition: 0.3s;
 }
 .btn-otra:hover{
@@ -163,7 +167,7 @@ header{
 }
 
 .titulo-respuesta {
-    font-size: 24px; 
+    font-size: 50px; 
     font-weight: bold; 
     color: #000000bb; 
     margin-bottom: 10px; 
@@ -228,18 +232,25 @@ header{
 }
 
 .Historial{
-    width: 100%;
+    width: 70%;
     display:flex;
+    background-color: #1a3e59;
     justify-content: space-around;
+    color: white;
+}
+.Historial:hover{
+    background-color: #2d4b62;
+    color: white;
+    scale: 1.01;
 }
 
 #chat-messages {
-    height: calc(90vh - 150px);  /* Altura calculada dinámica */
-    overflow-y: auto;            /* Habilitar scroll vertical solo dentro del contenedor */
+    height: calc(90vh - 150px);  
+    overflow-y: auto;       
     margin-bottom: 15px;         
-    background-color: #ffffff;   /* Fondo blanco */
-    padding: 10px;               /* Espacio interno para que el contenido no quede pegado al borde */
+    background-color: #ffffff;   
+    padding: 10px;             
     padding-bottom: 5vh;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el área */
-    border-radius: 8px;          /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;   
 }

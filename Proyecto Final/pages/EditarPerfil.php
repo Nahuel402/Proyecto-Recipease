@@ -34,7 +34,7 @@ if ($re = mysqli_query($conn, $sql)) {
 <?php include "../includes/header.php"; ?>
     <div class="container">
         <div class="row">
-            <div class="column col-md-6 profile-container">
+            <div class="column col-md-6 profile-container-right">
                 <h1 class="text-center">Perfil</h1>
                 <div class="text-center mb-4">
                     <img id="profilePreview" class="profile-img-preview" src="<?= !empty($imagen) ? $imagen : 'https://via.placeholder.com/120' ?>" alt="Imagen de Perfil">
@@ -47,7 +47,7 @@ if ($re = mysqli_query($conn, $sql)) {
                 </div>
             </div>
 
-            <div class="column col-md-6 profile-container">
+            <div class="column col-md-6 profile-container-left">
                 <h1 class="text-center">Editar Perfil</h1>
                 <form action="../base_de_datos/EditarUser.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
