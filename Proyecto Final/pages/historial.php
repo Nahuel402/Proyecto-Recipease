@@ -11,6 +11,7 @@ if ($conn->connect_error) {
 $imagen = "";
 $nombre = "";
 $fecha = "";
+$Value = "";
 $query = mysqli_query($conn, "SELECT Nombre, Imagen FROM usuarios WHERE ID = " . $_SESSION["IdUsuario"] . "") or die(mysqli_error($conn));
 while ($row = mysqli_fetch_array($query)) {
     $imagen = $row["Imagen"];
@@ -26,7 +27,7 @@ while ($row = mysqli_fetch_array($query)) {
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/globales.css">
     <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/recetass.css">
+    <link rel="stylesheet" href="../assets/css/recetas.css">
     <title>Historial de Recetas - RecipeEase</title>
 </head>
 <body>
@@ -37,6 +38,8 @@ while ($row = mysqli_fetch_array($query)) {
             <div class="col-12"><br></div>
         </div>
         <h1 class="text-center mb-4">Historial de Recetas</h1>
+        <input type="hidden" id="ID" value="<?$_SESSION['IdUsuario']?>">
+        <div class="input"><input type="text" id="input-search" class="input-search"><button class="btn-search" id="btn-search">Search</button></div>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -46,8 +49,8 @@ while ($row = mysqli_fetch_array($query)) {
                 </tr>
             </thead>
             <tbody>
+                <input type="hidden" id="Indicación" value = '<?$Value?>'>
                 <?php
-                // Consulta para obtener las recetas recientes
                 $sql = "SELECT NomReceta, Id, fecha FROM `recetas recientes` WHERE Id_usuario = " . $_SESSION["IdUsuario"] . " ORDER BY Id DESC";
                 
                 $result = mysqli_query($conn, $sql);
@@ -57,13 +60,23 @@ while ($row = mysqli_fetch_array($query)) {
                         $idReceta = $row['Id'];
                         $nombreReceta = $row['NomReceta'];
                         $fecha = $row['fecha'];
-                        echo "<tr>
-                                <td>$nombreReceta</td>
-                                <td>$fecha</td>
-                                <td class='text-center'>
-                                    <a href='receta_detalle.php?id=$idReceta' class='btn btn-custom'>Ver Detalles</a>
-                                </td>
-                              </tr>";
+                        if ($Value == true) {
+                            echo "<tr>
+                                    <td>$nombreReceta</td>
+                                    <td>$fecha</td>
+                                    <td class='text-center'>
+                                        <a href='receta_detalle.php?id=$idReceta' class='btn btn-custom'>Ver Detalles</a>
+                                    </td>
+                                </tr>";
+                        }else{
+                            echo "<tr>
+                                    <td id='nom'>$nombreReceta</td>
+                                    <td id='fech'>$fecha</td>
+                                    <td class='text-center'>
+                                        <a href='receta_detalle.php?id=$idReceta' class='btn btn-custom'>Ver Detalles</a>
+                                    </td>
+                                </tr>";
+                        }
                     }
                 } else {
                     echo "<tr><td colspan='3' class='text-center'>No se han ingresado recetas recientes.</td></tr>";
@@ -76,6 +89,7 @@ while ($row = mysqli_fetch_array($query)) {
         <a href="ChatBot.php" class="btn btn-custom">Volver al chat</a>
     </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

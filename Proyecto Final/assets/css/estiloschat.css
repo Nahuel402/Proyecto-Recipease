@@ -41,6 +41,15 @@ body {
     display: flex;
     min-width: 100%;
 }
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos /
+    display: none; / Ocultar por defecto */
+    text-align: center;
+}
 
 .favorite-btn {
     width: 24px; /* Tamaño del corazón */
@@ -183,7 +192,11 @@ body {
 .seccion-historial ul li a:hover {
     color: #0000005d; 
 }
-
+.Historial{
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+}
 /* Estilo para la sección del chat */
 #chat-messages {
     height: calc(90vh - 150px); 
