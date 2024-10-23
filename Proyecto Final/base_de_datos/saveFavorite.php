@@ -4,25 +4,25 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "recipeease";
-$conn = new mysqli($servername, $username, $password, $dbname);
 
+$conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if (isset($_SESSION['IdUsuario']) && isset($_POST['id'])) {
+if (isset($_SESSION['IdUsuario']) && isset($_POST['id']) && isset($_POST['origin'])) {
     $idUsuario = $_SESSION['IdUsuario'];
     $idReceta = $_POST['id'];
     $nombreReceta = $_POST['title'];
     $instrucciones = $_POST['instructions'];
     $ingredientes = $_POST['ingredients'];
+    $origin = $_POST['origin']; // Captura el origen (chatbot o historial)
 
     // Verifica si la receta ya está en favoritos
     $checkQuery = "SELECT * FROM `receta favorita` WHERE Id_usuario = $idUsuario AND Id_receta = $idReceta";
     $result = mysqli_query($conn, $checkQuery);
 
     if (!$result) {
-        // Si hay un error en la consulta, lo muestra
         die("Error en la consulta: " . mysqli_error($conn));
     }
 
@@ -31,10 +31,8 @@ if (isset($_SESSION['IdUsuario']) && isset($_POST['id'])) {
         $deleteQuery = "DELETE FROM `receta favorita` WHERE Id_usuario = $idUsuario AND Id_receta = $idReceta";
         if (mysqli_query($conn, $deleteQuery)) {
             echo "Receta eliminada de favoritos.";
-            header("Location:../pages/ChatBot.php");
         } else {
             echo "Error al eliminar la receta: " . mysqli_error($conn);
-          
         }
     } else {
         // Si no existe, añade la receta a favoritos
@@ -42,10 +40,18 @@ if (isset($_SESSION['IdUsuario']) && isset($_POST['id'])) {
                         VALUES ($idUsuario, $idReceta, '$nombreReceta', '$instrucciones', '$ingredientes')";
         if (mysqli_query($conn, $insertQuery)) {
             echo "Receta añadida a favoritos.";
-            header("Location:../pages/ChatBot.php");
         } else {
             echo "Error al añadir la receta: " . mysqli_error($conn);
         }
+    }
+
+    // Redirigir según el origen
+    if ($origin === 'historial') {
+        header("Location: ../pages/historial.php");
+    } elseif ($origin === 'chatbot') {
+        header("Location: ../pages/ChatBot.php");
+    } else {
+        echo "Error: Origen no válido.";
     }
 } else {
     echo "Error: No se recibió la información correcta.";
