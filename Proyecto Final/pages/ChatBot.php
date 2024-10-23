@@ -120,6 +120,7 @@ if (isset($_SESSION["IdUsuario"])){
                                 <label id="instructions"></label>
                             </div>
                         </div>
+                        <div id="optional-ingredients" class="mensaje-respuesta"></div>
                     </div>
                 </div>
 

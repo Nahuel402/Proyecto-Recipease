@@ -1,4 +1,3 @@
-/* Fondo general */
 body {
     position: fixed;
     bottom: 0;
@@ -7,9 +6,8 @@ body {
     left: 0;
 }
 
-/* Estilo del contenedor de entrada del chat */
 .entrada-chat {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
     padding: 15px; 
     display: flex; 
     justify-content: space-between; 
@@ -21,43 +19,42 @@ body {
     right: 2%;
 }
 
-/* Estilos para el nombre de usuario */
 .nombreU:focus {
     color: #ffffff;
 }
 
-/* Enlace de registro */
+
 .A-Registro {
-    color: #1a3e59; /* Azul oscuro */
+    color: #1a3e59;
     text-decoration: none;
 }
 .A-Registro:hover {
-    color: #80b3b3; /* Azul claro al pasar el ratón */
+    color: #80b3b3;
 }
 
-/* Estilos de recetas */
 .Recetas {
     display: flex;
     min-width: 100%;
 }
 .loading {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 60%;
+    right: 40%;
+    bottom: 60%;
     transform: translate(-50%, -50%);
-    z-index: 1000; /* Asegúrate de que esté encima de otros elementos /
-    display: none; / Ocultar por defecto */
+    z-index: 1000;
     text-align: center;
 }
 
 .favorite-btn {
-    width: 24px; /* Tamaño del corazón */
-    transition: transform 0.7s ease-in-out, filter 0.3s ease-in-out; /* Animación suave */
+    width: 24px;
+    transition: transform 0.7s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .favorite-btn.red {
-    transform: scale(1.2); /* Aumenta el tamaño ligeramente */
-    filter: none; /* Elimina cualquier ajuste de color */
+    transform: scale(1.2); 
+    filter: none; 
 }
 
 .RecetasFav {
@@ -66,7 +63,6 @@ body {
     align-self: flex-end;
 }
 
-/* Estilos para los botones */
 .container-buttons-card {
     display: flex;
     gap: 20px;
@@ -83,7 +79,6 @@ body {
     font-size: 18px;
 }
 
-/* Estilos de entrada de chat */
 .entrada-chat input {
     width: 100%; 
     border-radius: 8px; 
@@ -91,9 +86,8 @@ body {
     padding: 10px; 
 }
 
-/* Botones de la entrada del chat */
 .entrada-chat button {
-    background-color: #264653; /* Azul petróleo cálido */
+    background-color: #264653;
     border: none; 
     color: white; 
     padding: 10px 20px; 
@@ -101,14 +95,13 @@ body {
     cursor: pointer; 
 }
 
-/* Hover del botón */
 .entrada-chat button:hover {
-    background-color: #2a9d8f; /* Verde agua cálido */
+    background-color: #2a9d8f;
 }
 header{
     background-color: rgb(66, 66, 66);
 }
-/* Estilos de respuesta del chatbot */
+
 .response-text {
     width: auto;
     height: 100%;
@@ -168,7 +161,7 @@ header{
 .arrowN{
     width: 25px;
 }
-/* Títulos de respuesta */
+
 .titulo-respuesta {
     font-size: 24px; 
     font-weight: bold; 
@@ -177,19 +170,17 @@ header{
     text-align: center; 
 }
 
-/* Sección de respuesta */
 .seccion-respuesta {
     margin-bottom: 20px; 
 }
 
 .seccion-respuesta h3 {
-    background-color: #1a3e59; /* Azul oscuro */
+    background-color: #1a3e59;
     color: white; 
     padding: 10px; 
     border-radius: 5px; 
 }
 
-/* Listas en la sección de respuesta */
 .seccion-respuesta ul,
 .seccion-respuesta ol {
     padding-left: 20px; 
@@ -201,7 +192,6 @@ header{
     margin-bottom: 5px; 
 }
 
-/* Sección del historial de recetas */
 .seccion-historial {
     background-color: #ffffff; 
     border-radius: 10px; 
@@ -212,14 +202,13 @@ header{
 }
 
 .seccion-historial h4 {
-    background-color: #1a3e59; /* Azul oscuro */
+    background-color: #1a3e59;
     color: white; 
     padding: 10px; 
     border-radius: 5px; 
     margin-bottom: 15px; 
 }
 
-/* Listas en el historial */
 .seccion-historial ul {
     list-style: none; 
     padding-left: 0; 
@@ -244,9 +233,13 @@ header{
     justify-content: space-around;
 }
 
-/* Estilo para la sección del chat */
 #chat-messages {
-    height: calc(90vh - 150px); 
-    overflow-y: auto; 
-    margin-bottom: 15px; 
+    height: calc(90vh - 150px);  /* Altura calculada dinámica */
+    overflow-y: auto;            /* Habilitar scroll vertical solo dentro del contenedor */
+    margin-bottom: 15px;         
+    background-color: #ffffff;   /* Fondo blanco */
+    padding: 10px;               /* Espacio interno para que el contenido no quede pegado al borde */
+    padding-bottom: 5vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el área */
+    border-radius: 8px;          /* Bordes redondeados */
 }
