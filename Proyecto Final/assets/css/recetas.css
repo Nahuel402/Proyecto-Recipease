@@ -1,0 +1,106 @@
+body {
+    background-color: #e5e5e5;
+    color: #000;
+}
+
+h1 {
+    padding-top: 50px;
+    font-size: 7vh;
+    text-decoration:underline;
+    color: #1a3e59;
+}
+
+.input {
+    padding-top: 10px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.input-search {
+    border-radius: 5px;
+    height: 50px;
+    width: 80%;
+    font-size: 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.input-search:focus,
+.input-search:hover{
+    background-color: #f6f6f6;
+}
+
+.btn-search {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #264653;
+    color: white;
+    border: none;
+    transition: background-color 0.7s ease;
+}
+
+.btn-search:hover {
+    background-color: #79a7b9;
+    scale: 1.1;
+}
+.favorite{
+    border: none;
+    border-radius: 5px;
+
+}
+.favorite-btn {
+    width: 24px;
+    transition: transform 0.7s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.favorite-btn.red {
+    transform: scale(1.2);
+    filter: none;
+}
+.table {
+    background-color: #f0f0f0; 
+}
+
+.table th {
+    background-color: #3b3b3b;
+    color: #ffffff;
+    text-align: center;
+}
+
+.table td {
+    color: #000;
+    text-align: center;
+}
+
+.btn-custom {
+    background-color: #264653;
+    color: #fff;
+}
+
+.btn-custom:hover {
+    background-color: #79a7b9;
+    scale: 1.1;
+}
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #264653;
+}
+
+.btn-custom {
+    background-color: #264653;
+    color: #fff;
+    transition: background-color 0.7ss ease;
+}
+
+.btn-custom:hover {
+    background-color: #79a7b9;
+}

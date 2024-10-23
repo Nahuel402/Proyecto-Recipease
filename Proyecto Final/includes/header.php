@@ -1,6 +1,6 @@
 <?php
 
-$role = isset($_SESSION["role"]) ? $_SESSION["role"] : 'user';  // Establecer el rol por defecto
+$role = isset($_SESSION["role"]) ? $_SESSION["role"] : 'user';
 
 if (isset($_SESSION["IdUsuario"])) {
   $Direc = "ChatBot.php";
@@ -37,8 +37,6 @@ if (isset($_SESSION["IdUsuario"])) {
         </li>
       </ul>
       <img class='rounded-circle me-2' width='50' height='50'src='$imagen'></div>";
-      }else{
-        
       }
       ?>
       

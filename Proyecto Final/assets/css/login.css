@@ -1,59 +1,58 @@
 /* Fondo general */
 body {
-    background-color: #f4f4f4; /* Gris claro y cálido */
+    background-color: #f4f4f4;
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #333333; /* Gris oscuro cálido para el texto */
+    color: #333333; 
 }
 .header {
     position: fixed;
-    top: 0; /* Pegado a la parte superior */
-    width: 100%; /* Ancho completo */
-    background-color: #949494; /* Color de fondo */
-    color: white; /* Color del texto */
-    transition: top 0.3s; /* Suaviza el movimiento del header */
-    z-index: 1000; /* Asegúrate de que esté encima del contenido */
+    top: 0; 
+    width: 100%;
+    color: white;
+    transition: top 0.3s;
+    z-index: 1000; 
 }
 
 .container {
-    background-color: #3b3b3b; /* Gris oscuro más cálido */
-    border: 1px solid #aaa; /* Borde gris más claro */
-    padding: 60px 20px 20px; /* Aumentar padding-top a 60px */
-    margin-top: 40px; /* Añadir espacio encima del contenedor */
+    background-color: #3b3b3b; 
+    border: 1px solid #aaa; 
+    padding: 60px 20px 20px; 
+    margin-top: 40px; 
     border-radius: 10px;
     max-width: 400px;
-    margin: 40px auto; /* Alinear al centro con margen superior */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+    margin: 40px auto; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
 }
 
-/* Títulos y descripciones */
+/* Títulos y descripciones*/
 .title {
-    color: #ffffff; /* Texto blanco */
+    color: #ffffff; 
     text-align: center;
-    font-size: 2em; /* Aumentar tamaño de texto para título */
-    margin-bottom: 10px; /* Espacio debajo del título */
+    font-size: 2em; 
+    margin-bottom: 10px; 
 }
 
 .description {
-    color: #ffffff; /* Texto blanco */
+    color: #ffffff; 
     text-align: center;
-    font-size: 1.2em; /* Aumentar tamaño de texto para descripción */
+    font-size: 1.2em; 
 }
 
-/* Formularios */
+/* Formularios*/
 .form-control {
-    background-color: #e0e0e0; /* Fondo más claro para formularios */
-    color: #333333; /* Texto gris oscuro */
-    border: 1px solid #ccc; /* Borde gris claro */
+    background-color: #e0e0e0; 
+    color: #333333; 
+    border: 1px solid #ccc; 
     border-radius: 5px;
     margin-bottom: 10px;
-    font-size: 1.2em; /* Aumentar tamaño de texto */
+    font-size: 1.2em; 
 }
 .form-control::placeholder {
-    color: #666666; /* Placeholder gris claro */
+    color: #666666; 
 }
 
-/* Botones principales */
+/* Botones*/
 .butR {
     width: 100%;
     max-width: 500px;
@@ -61,40 +60,39 @@ body {
     text-align: center;
     border-radius: 50px;
     margin: 10px auto;
-    background-color: #264653; /* Azul petróleo cálido */
-    color: #f0f0f0; /* Texto blanco sucio */
+    background-color: #264653; 
+    color: #f0f0f0; 
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1.2em; /* Aumentar tamaño de texto */
+    font-size: 1.2em; 
 }
 .butR:hover {
-    background-color: #2a9d8f; /* Verde agua cálido */
-    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+    background-color: #2a9d8f; 
+    transform: scale(1.05); 
 }
 
-/* Botones secundarios */
 .btn {
-    background-color: #264653; /* Azul petróleo cálido */
-    color: #f0f0f0; /* Texto blanco sucio */
-    border: 2px solid #aaa; /* Borde gris más claro */
+    background-color: #264653; 
+    color: #f0f0f0; 
+    border: 2px solid #aaa; 
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    font-size: 1.2em; /* Aumentar tamaño de texto */
+    font-size: 1.2em; 
 }
 .btn:hover {
-    background-color: #2a9d8f; /* Verde agua cálido */
-    color: #ffffff; /* Texto blanco */
-    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+    background-color: #2a9d8f; 
+    color: #ffffff; 
+    transform: scale(1.05); 
 }
 
 /* Links */
 .Redir, .text-center a {
-    color: #0969da; /* Azul clásico para el enlace */
+    color: #0969da; 
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 1.2em; /* Aumentar tamaño de texto */
+    font-size: 1.2em; 
 }
 .text-center a:hover {
-    color: #1e53ff; /* Azul más brillante al pasar el ratón */
+    color: #1e53ff; 
 }
 
 /* Imágenes */
@@ -103,26 +101,25 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 10px;
-    border: 2px solid #4c4c4c; /* Borde gris oscuro */
+    border: 2px solid #4c4c4c; 
 }
+
 @media (max-width: 575.98px) {
     .container {
         padding: 10px; 
-        margin-top: 100px; /* Elimina el margen superior para que ocupe toda la pantalla */
-        width: 100%; /* Ancho completo */
-        height: 100%; /* Altura completa */
-        border-radius: 0; /* Opcional: elimina el redondeo de esquinas */
+        margin-top: 100px; 
+        width: 100%; 
+        height: 100%; 
+        border-radius: 0; 
     }
-    
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
     .container {
-        width: 100%; /* Ancho completo */
-        height: 100%; /* Altura completa */
-        border-radius: 0; /* Opcional: elimina el redondeo de esquinas */
+        width: 100%; 
+        height: 100%; 
+        border-radius: 0; 
     }
-    
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -154,14 +151,13 @@ body {
     }
 }
 
-
 /* Listas */
 .Recetas {
-    background-color: #3b3b3b; /* Gris oscuro más cálido */
-    border-bottom: 1px solid #aaa; /* Borde gris más claro */
+    background-color: #3b3b3b; 
+    border-bottom: 1px solid #aaa; 
     padding: 10px;
     transition: background-color 0.3s ease;
 }
 .Recetas:hover {
-    background-color: #666666; /* Gris más claro al pasar el ratón */
+    background-color: #666666; 
 }

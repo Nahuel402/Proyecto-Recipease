@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/indexx.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <script defer src="../assets/js/Cod.js"></script>
     <title>RecipeEase</title>
 </head>

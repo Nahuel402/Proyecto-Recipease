@@ -44,7 +44,7 @@ if (isset($_SESSION["IdUsuario"])){
     include "../includes/header.php";
     $_SESSION["site"] = "chatbot.php";
     ?>
-    <div class="container-fluid vh-100 p-5 ">
+    <div class="container-fluid bodychat vh-100 p-5 ">
     <div class="row">
         <div class="col-12 p-4"></div>
     </div>
@@ -103,10 +103,14 @@ if (isset($_SESSION["IdUsuario"])){
                  
             </div>
 
-            <div class="col-9  ">
+            <div class="col-9">
                 <div id="user-prompt-display" class="response-message"></div>
                 <div id="chat-messages" class="flex-grow-1 p-3">
                     <div id="response-text" class="response-text ">
+                    <div id="loading" class="loading" style="display: none; text-align: center;">
+    <img src="../assets/images/loading.gif" alt="Cargando..." style="width: 100px; height: 100px;">
+                                    <p>Cargando...</p>
+                                </div>
                         <p id="title" class="titulo-respuesta"></p>
                         <div class="row">
                             <div class="col-6">

@@ -15,8 +15,8 @@ body {
       /*filter: invert(20%) sepia(100%) saturate(4000%);*/
     }
   }
-.container-fluid{
-    background-color: #000000bb;
+.bodychat{
+    background-color: #aaa;
     height: 90px;
 }
 
@@ -38,6 +38,7 @@ a {
     justify-content: space-around;
     color: black;
     overflow: visible;
+    background-color: rgb(66, 66, 66);
 }
 
 .Logo {

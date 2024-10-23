@@ -1,6 +1,5 @@
 /* Fondo general */
 body {
-    background-color: #e5e5e5; /* Fondo gris claro */
     position: fixed;
     bottom: 0;
     right: 0;
@@ -106,7 +105,9 @@ body {
 .entrada-chat button:hover {
     background-color: #2a9d8f; /* Verde agua cálido */
 }
-
+header{
+    background-color: rgb(66, 66, 66);
+}
 /* Estilos de respuesta del chatbot */
 .response-text {
     width: auto;

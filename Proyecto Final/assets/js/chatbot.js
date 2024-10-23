@@ -24,13 +24,13 @@ async function FetchOpenAIResponse() {
     }else{
         historial = userPrompt;
     }
-        // Mostrar la animación de carga
+
         document.getElementById('loading').style.display = 'block';
         document.getElementById('title').innerHTML = " ";
         document.getElementById('ingredients').innerHTML = " ";
         document.getElementById('instructions').innerHTML = " ";
 
-    document.getElementById('userPrompt').value = '';  // Limpiar el campo de entrada
+    document.getElementById('userPrompt').value = '';
     const context = `
         Eres RecipeEase, un asistente inteligente diseñado exclusivamente para ayudar a los usuarios a cocinar. Tu objetivo es proporcionar recetas, sugerencias de ingredientes, y ayudar a mejorar habilidades culinarias. Respondes únicamente a preguntas y temas relacionados con la cocina y la gastronomía. Sigues las siguientes reglas estrictas:
 
@@ -80,7 +80,7 @@ async function FetchOpenAIResponse() {
             },
             body: JSON.stringify({
                 model: 'gpt-4',
-                messages: [{ role: 'user', content: `${context} Aquí está la consulta del usuario: ${userPrompt}` }]
+                messages: [{ role: 'user', content: `${context} Aquí está la consulta del usuario: ${userPrompt} ${context2}` }]
             })
         });
 
@@ -90,19 +90,16 @@ async function FetchOpenAIResponse() {
         const data = await response.json();
         const responseText = data.choices[0].message.content;
 
-        // Desglosar y mostrar la respuesta
         const sections = parseRecipeResponse(responseText);
         document.getElementById('title').innerHTML = `<h2>${sections.title}</h2>`;
 
-        // Mostrar solo si hay ingredientes
         document.getElementById('ingredients').innerHTML = sections.ingredients ? `
             <h3>Ingredientes</h3><ul>${sections.ingredients}</ul>` : '';
 
-        // Mostrar solo si hay instrucciones (y evitar mostrar 'Instrucciones no proporcionadas')
         document.getElementById('instructions').innerHTML = sections.instructions && sections.instructions !== 'Instrucciones no proporcionadas.' ? `
             <h3>Instrucciones</h3><ol>${sections.instructions}</ol>` : '';
 
-            sendTitleToDatabase(sections.title, sections.ingredients, sections.instructions);  // Enviar el título a la base de datos
+            sendTitleToDatabase(sections.title, sections.ingredients, sections.instructions);
     } catch (error) {
         document.getElementById('title').textContent = error.message;
     }
@@ -118,9 +115,8 @@ function parseRecipeResponse(responseText) {
     return { title, ingredients, instructions };
 }
 
-// Función para enviar el título a la base de datos
 function sendTitleToDatabase(title, ingredients, instructions) {
-    fetch('../base_de_datos/SaveRecipeTitle.php', {
+    fetch('../base_de_datos/SaveRecipe.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: `title=${encodeURIComponent(title)}&ingredients=${encodeURIComponent(ingredients)}&instructions=${encodeURIComponent(instructions)}`
