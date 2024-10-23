@@ -56,7 +56,7 @@ if ($row = mysqli_fetch_array($query)) {
                 $sql = "SELECT r.Id, r.NomReceta, r.fecha, 
                                IF(rf.Id_receta IS NOT NULL, 1, 0) AS esFavorito
                         FROM `recetas recientes` r
-                        LEFT JOIN `receta favorita` rf 
+                        LEFT JOIN `receta favorita` rf
                         ON r.Id = rf.Id_receta AND rf.Id_usuario = $idUsuario
                         WHERE r.Id_usuario = $idUsuario
                         ORDER BY r.Id DESC";
@@ -71,14 +71,19 @@ if ($row = mysqli_fetch_array($query)) {
 
                         $iconoCorazon = $esFavorito ? '../assets/images/corazon.png' : '../assets/images/corazonvacio.png';
                         $claseFavorito = $esFavorito ? 'red' : '';
-
                         echo "<tr>
                                 <td>$nombreReceta</td>
                                 <td>$fecha</td>
                                 <td>
-                                    <button class='favorite' onclick='toggleHeart(this)'>
+                                    <form action='../base_de_datos/saveFavorite.php' method='POST'>
+                                    <input type='hidden' name='id' value='$idReceta'>
+                                    <input type='hidden' name='title' value='$nombreReceta'>
+                                    <input type='hidden' name='instructions' value='Instrucciones de ejemplo'>
+                                    <input type='hidden' name='ingredients' value='Ingredientes de ejemplo'>
+                                    <button class='favorite'>
                                         <img class='favorite-btn $claseFavorito' src='$iconoCorazon' id='favorite-$idReceta' alt='Heart'>
                                     </button>
+                                </form>
                                 </td>
                                 <td class='text-center'>
                                     <a href='receta_detalle.php?id=$idReceta'>
@@ -117,7 +122,7 @@ if ($row = mysqli_fetch_array($query)) {
                     })
                     .catch(error => console.error('Error en la búsqueda:', error));
             } else {
-                location.reload();  // Recargar si no hay búsqueda activa
+                location.reload();
             }
         });
     </script>

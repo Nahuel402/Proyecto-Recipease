@@ -10,13 +10,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if (isset($_SESSION['IdUsuario']) && isset($_POST['id']) && isset($_POST['origin'])) {
+if (isset($_SESSION['IdUsuario']) && isset($_POST['id']) ) {
     $idUsuario = $_SESSION['IdUsuario'];
     $idReceta = $_POST['id'];
     $nombreReceta = $_POST['title'];
     $instrucciones = $_POST['instructions'];
     $ingredientes = $_POST['ingredients'];
-    $origin = $_POST['origin']; // Captura el origen (chatbot o historial)
 
     // Verifica si la receta ya está en favoritos
     $checkQuery = "SELECT * FROM `receta favorita` WHERE Id_usuario = $idUsuario AND Id_receta = $idReceta";
@@ -46,9 +45,9 @@ if (isset($_SESSION['IdUsuario']) && isset($_POST['id']) && isset($_POST['origin
     }
 
     // Redirigir según el origen
-    if ($origin === 'historial') {
+    if ($_SESSION["site"] == "historial.php") {
         header("Location: ../pages/historial.php");
-    } elseif ($origin === 'chatbot') {
+    } elseif ($_SESSION["site"] == "chatbot.php") {
         header("Location: ../pages/ChatBot.php");
     } else {
         echo "Error: Origen no válido.";

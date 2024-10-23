@@ -42,6 +42,7 @@ if (isset($_SESSION["IdUsuario"])){
 <body>
 <?php 
     include "../includes/header.php";
+    $_SESSION["site"] = "chatbot.php";
     ?>
     <div class="container-fluid vh-100 p-5 ">
     <div class="row">
@@ -66,7 +67,7 @@ if (isset($_SESSION["IdUsuario"])){
                         $esFavorito = $row['esFavorito'];
 
                         $iconoCorazon = $esFavorito ? '../assets/images/corazon.png' : '../assets/images/corazonvacio.png';
-                        $claseFavorito = $esFavorito ? 'red' : ''; 
+                        $claseFavorito = $esFavorito ? 'red' : '';
                         echo "<li class='Recetas'>
                         <a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
                         <div class='RecetasFav'>
