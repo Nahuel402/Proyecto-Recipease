@@ -46,7 +46,20 @@ h1 {
     background-color: #79a7b9;
     scale: 1.1;
 }
+.favorite{
+    border: none;
+    border-radius: 5px;
 
+}
+.favorite-btn {
+    width: 24px; /* Tamaño del corazón */
+    transition: transform 0.7s ease-in-out, filter 0.3s ease-in-out; /* Animación suave */
+}
+
+.favorite-btn.red {
+    transform: scale(1.2); /* Aumenta el tamaño ligeramente */
+    filter: none; /* Elimina cualquier ajuste de color */
+}
 .table {
     background-color: #f0f0f0; 
 }

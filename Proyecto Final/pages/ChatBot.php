@@ -11,6 +11,7 @@
     $noingreso= "";
     $imagen = "";
     $nombre = "";
+    $_SESSION["site"] = "ChatBot.php";
     if (isset($_SESSION["IdUsuario"])){
         $query = mysqli_query($conn, "SELECT Nombre, Imagen FROM usuarios WHERE ID = " . $_SESSION["IdUsuario"] . "") or die(mysqli_error($conn));
         while ($row = mysqli_fetch_array($query)) {
@@ -62,7 +63,7 @@
                                 $nombreReceta = $row['NomReceta'];
                                 $idReceta = $row['Id'];
                                 $esFavorito = $row['esFavorito'];
-
+                                
                                 $iconoCorazon = $esFavorito ? '../assets/images/corazon.png' : '../assets/images/corazonvacio.png';
                                 $claseFavorito = $esFavorito ? 'red' : ''; 
                                 if($i <=10) {
@@ -101,7 +102,7 @@
                 ?>
             </div>
 
-            <div class="col-9  ">
+            <div class="col-9">
                 <div id="user-prompt-display" class="response-message"></div>
                 <div id="chat-messages" class="flex-grow-1 p-3">
                     <div id="response-text" class="response-text ">
@@ -110,23 +111,25 @@
                                 <p>Cargando...</p>
                         </div>
                         <p id="title" class="titulo-respuesta"></p>
+                        
                         <div class="row">
-                            <div class="col-6">
-                                <label id="ingredients" class="mensaje-respuesta"></label>
+                            <div class="col-6 mensaje-respuesta-Ingre">
+                                <label id="ingredients"></label>
                             </div>
-                            <div class="col-6 mensaje-respuesta">
+                            <div class="col-6 mensaje-respuesta-Instru">
                                 <label id="instructions"></label>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
-
+                <div class="div-next"><button class="btn-otra" onmouseenter="imagen()" type="submit" onclick="FetchOpenAIResponse()"  ><img src="../assets/images/caret-right.svg" id="filtrado" class="arrowN" id="filtrado" alt="Next"></button></div>
                 <div class="entrada-chat">
                     <input type="text" id="userPrompt" class="form-control me-3" placeholder="Escribe tu mensaje aquí..." required>
                     <button onclick="FetchOpenAIResponse()" type="submit" class="btn">Enviar</button>
                 </div>
             </div>
         </div>
+        
     </div>
 
     <script>

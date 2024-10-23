@@ -8,7 +8,7 @@ if (isset($_SESSION["IdUsuario"])) {
   $Direc = "Index.php";
 }
 ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary header">
+<nav class="navbar navbar-expand-lg bg-body-tertiary header" style="position:fixed; z-index:1;">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo $Direc;?>">
       <img id="filtrado" src="../assets/images/Looo.svg" width="40" height="40">

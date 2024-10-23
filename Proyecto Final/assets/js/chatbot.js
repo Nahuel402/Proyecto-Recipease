@@ -3,21 +3,32 @@ function click(){
 
     document.getElementById("favorite").src = "../assets/images/heart-fill.svg";
 }
+function imagen(){
+    document.getElementById("ArrowNext").src = "../assets/images/caret-right-fill.svg";
+}
+var historial = ""; 
 async function FetchOpenAIResponse() {
     const apiKey = '';
     const url = 'https://api.openai.com/v1/chat/completions';
-    const userPrompt = document.getElementById('userPrompt').value.trim();
-
-    // Mostrar la animación de carga
-    document.getElementById('loading').style.display = 'block';
-    document.getElementById('title').innerHTML = " ";
-    document.getElementById('ingredients').innerHTML = " ";
-    document.getElementById('instructions').innerHTML = " ";
+    var userPrompt = document.getElementById('userPrompt').value.trim();
 
     if (!userPrompt) {
-        document.getElementById('response').textContent = 'Por favor, ingrese una pregunta.';
-        return;
+        if(!historial){
+            document.getElementById('response').innerHTML = 'Por favor, ingrese una pregunta.';
+            document.getElementById('loading').style.display = 'none';
+            return;
+        }else{
+            userPrompt = historial;
+            console.log(userPrompt);
+        }
+    }else{
+        historial = userPrompt;
     }
+        // Mostrar la animación de carga
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('title').innerHTML = " ";
+        document.getElementById('ingredients').innerHTML = " ";
+        document.getElementById('instructions').innerHTML = " ";
 
     document.getElementById('userPrompt').value = '';  // Limpiar el campo de entrada
     const context = `
@@ -25,7 +36,7 @@ async function FetchOpenAIResponse() {
 
         Responde solo preguntas sobre cocina, ingredientes, recetas, utensilios, técnicas culinarias, o cualquier cosa relacionada con la gastronomía.
 
-        Si un usuario te proporciona una lista de ingredientes, siempre generas una receta que pueda ser hecha con ellos. Si los ingredientes no son suficientes para una receta común, sugiere ingredientes adicionales que puedan mejorar la receta o hacerla viable.
+        Si un usuario te proporciona una lista de ingredientes, siempre generas una receta que pueda ser hecha con ellos. Si los ingredientes no son suficientes para una receta común, sugiere ingredientes adicionales que puedan mejorar la receta o hacerla viable y agregale un boton hecho con lenguaje Html con una clase llamada "btn-agregar" a la derecha de cada receta agregada con este texto dentro del boton : "agregar" .
 
         Si el usuario te hace una pregunta que no tiene nada que ver con la cocina o la gastronomía, simplemente responde con: "RecipeEase solo está diseñado para ayudarte con temas relacionados con la cocina y las recetas. ¿En qué te gustaría cocinar hoy?"
 
@@ -38,6 +49,8 @@ async function FetchOpenAIResponse() {
         Si el usuario pide recomendaciones, recomiendale una receta en base a lo que te haya pedido.
 
         Mantén las respuestas lo más claras y concisas posibles, sin entrar en detalles innecesarios.
+
+        Si el usuario te proporciona la misma lista de ingredientes que la ultima vez, generá una receta distinta a la ultima receta manteniendo los ingredientes que te haya enviado el usuario
 
         Ejemplo de una buena interacción:
         Usuario: "Tengo pollo, papas y cebolla, ¿qué puedo cocinar?"
@@ -70,9 +83,8 @@ async function FetchOpenAIResponse() {
                 messages: [{ role: 'user', content: `${context} Aquí está la consulta del usuario: ${userPrompt}` }]
             })
         });
-        // Ocultar la animación de carga
-        document.getElementById('loading').style.display = 'none';
 
+        document.getElementById('loading').style.display = 'none';
         if (!response.ok) throw new Error('Error al obtener la respuesta');
 
         const data = await response.json();

@@ -1,6 +1,8 @@
 
 .header{
     background-color: rgb(66, 66, 66);
+    position: fixed;
+    z-index:;
 }
 .navbar-brand img {
     width: 40px;

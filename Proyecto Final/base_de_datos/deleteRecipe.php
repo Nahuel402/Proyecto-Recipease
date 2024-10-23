@@ -26,6 +26,13 @@ if (isset($_POST['id'])) {
 $conn->close();
 
 // Redireccionar de nuevo al historial o donde desees
-header("Location: ../pages/ChatBot.php");
+if ($_SESSION["site"] == "historial.php" ) {
+    header("Location: ../pages/historial.php");
+}elseif ($_SESSION["site"] == "ChatBot.php") {
+    header("Location: ../pages/ChatBot.php");
+}else{
+    header("Location: ../base_de_datos/CerrarSession.php");
+}
+
 exit;
 ?>
