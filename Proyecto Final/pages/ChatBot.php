@@ -62,7 +62,7 @@ if (isset($_SESSION["IdUsuario"])){
                         $i="";
                         if ($result && mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                if ($i<=11) {
+                                
                                     $i++;
                                     $nombreReceta = $row['NomReceta'];
                                     $idReceta = $row['Id'];
@@ -73,6 +73,7 @@ if (isset($_SESSION["IdUsuario"])){
 
                                     $iconoCorazon = $esFavorito ? '../assets/images/corazon.png' : '../assets/images/corazonvacio.png';
                                     $claseFavorito = $esFavorito ? 'red' : '';
+                                    if ($i<=11) {
                                     echo "<li class='Recetas'>
                                     <a href='receta_detalle.php?id=$idReceta'>$nombreReceta</a>
                                     <div class='RecetasFav'>

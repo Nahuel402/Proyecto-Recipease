@@ -42,7 +42,7 @@ if (isset($_SESSION['IdUsuario']) && isset($_POST['id']) ) {
             echo "Error al añadir la receta: " . mysqli_error($conn);
         }
     }
-
+    
     if ($_SESSION["site"] == "historial.php") {
         header("Location: ../pages/historial.php");
     } elseif ($_SESSION["site"] == "chatbot.php") {
